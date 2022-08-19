@@ -5,7 +5,7 @@
     /* font-family: 'Caveat Brush', cursive; */
 }
 
-.App {
+.app {
     margin: 0;
     text-align: center;
     background-color: #f7efd8;
@@ -34,7 +34,7 @@
     border-bottom: 1px dashed;
 }
 
-.App-logo {
+/* .App-logo {
     height: 40vmin;
     pointer-events: none;
 }
@@ -67,4 +67,4 @@
     to {
         transform: rotate(360deg);
     }
-}
+} */

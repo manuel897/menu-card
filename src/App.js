@@ -1,12 +1,12 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+// import ReactDOM from 'react-dom/client';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './App.css';
 import data from './data';
 
 function App() {
     return (
-        <div className="App">
+        <div className="app">
             <div className="app-box">
                 <h1 className="main-title font-face-pacifico">Lord's Bakers</h1>
                 <Card />
