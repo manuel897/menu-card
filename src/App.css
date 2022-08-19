@@ -1,15 +1,14 @@
 /*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
 
 .font-face-pacifico {
-    font-family: 'Pacifico', cursive;
-    /* font-family: 'Caveat Brush', cursive; */
+    font-family: 'Pacifico';
 }
 
 .app {
     margin: 0;
     text-align: center;
     background-color: #f7efd8;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Amatic_SC', cursive;
 }
 
 .app-box {

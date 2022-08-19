@@ -13,10 +13,16 @@ code {
         monospace;
 }
 
-/* @font-face {
-    font-family: 'DancingScriptBold';
-    src: local('DancingScriptBold'),
-        url('./fonts/Dancing_Script/static/DancingScript-Bold.ttf')
-            format('truetype');
+@font-face {
+    font-family: 'Pacifico';
+    src: local('Pacifico'),
+        url('./fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: 'Amatic_SC';
+    src: local('Amatic_SC'),
+        url('./fonts/Amatic_SC/AmaticSC-Bold.ttf') format('truetype');
     font-weight: bold;
-} */
+}
