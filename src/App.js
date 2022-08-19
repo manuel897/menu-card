@@ -22,7 +22,6 @@ class Card extends React.Component {
                 <Category category={data[0]} />
                 <Category category={data[1]} />
                 <Category category={data[2]} />
-                <Category category={data[1]} />
             </div>
         );
     }
