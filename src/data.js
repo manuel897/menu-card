@@ -36,13 +36,95 @@ const data = [
                 price: 60,
             },
             {
-                name: 'mango smoothie',
+                name: 'Badan',
+                price: 80,
+            },
+            {
+                name: 'Oman',
+                price: 80,
+            },
+            {
+                name: 'Saudi',
+                price: 80,
+            },
+            {
+                name: 'Nuts',
+                price: 90,
+            },
+            {
+                name: 'Butterscotch',
+                price: 90,
+            },
+            {
+                name: 'Strawberry',
+                price: 80,
+            },
+            {
+                name: 'Pista',
+                price: 80,
+            },
+            {
+                name: 'Oreo',
+                price: 80,
+            },
+            {
+                name: 'Snickers',
+                price: 90,
+            },
+            {
+                name: 'Kitkat',
+                price: 90,
+            },
+            {
+                name: 'Dairymilk',
+                price: 90,
+            },
+            {
+                name: 'Strawberry',
+                price: 80,
+            },
+            {
+                name: 'Spanish Delight',
+                price: 90,
+            },
+            {
+                name: 'Sharjah Salad',
+                price: 80,
+            },
+            {
+                name: 'Choco Sharjah',
+                price: 80,
+            },
+            {
+                name: 'Choco Vanilla',
                 price: 80,
             },
         ],
     },
     {
         name: 'Fruit shakes',
+        items: [
+            {
+                name: 'Chikku',
+                price: 'Seasonal',
+            },
+            {
+                name: 'Musk Melon',
+                price: 'Seasonal',
+            },
+            {
+                name: 'Pappaya',
+                price: 'Seasonal',
+            },
+            {
+                name: 'Mango',
+                price: 'Seasonal',
+            },
+            {
+                name: 'Apple',
+                price: 'Seasonal',
+            },
+        ],
     },
     {
         name: 'Special shakes',

@@ -2,22 +2,36 @@
 
 .font-face-pacifico {
     font-family: 'Pacifico', cursive;
+    /* font-family: 'Caveat Brush', cursive; */
 }
 
 .App {
+    margin: 0;
     text-align: center;
     background-color: #f7efd8;
     font-family: 'Amatic SC', cursive;
 }
 
-.Main-title {
+.app-box {
+    border: 20px solid #f6a466;
+    padding: 1vh;
+}
+
+.main-title {
     color: #be7332;
     font-weight: 900;
 }
 
-.Category-title {
+.category-title {
     color: #e67045;
     font-weight: 800;
+}
+
+.item-box {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    border-bottom: 1px dashed;
 }
 
 .App-logo {
