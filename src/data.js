@@ -1,6 +1,6 @@
 const data = [
     {
-        name: 'smoothie',
+        name: 'Smoothie',
         items: [
             {
                 name: 'orange smoothie',
@@ -21,7 +21,7 @@ const data = [
         ],
     },
     {
-        name: 'shakes',
+        name: 'Shakes',
         items: [
             {
                 name: 'chocolate',
