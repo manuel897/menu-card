@@ -8,7 +8,9 @@ function App() {
     return (
         <div className="app">
             <div className="app-box">
-                <h1 className="main-title font-face-pacifico">Lord's Bakers</h1>
+                <h1 className="main-title font-face-pacifico">
+                    <u>Lord's Bakers</u>
+                </h1>
                 <Card />
             </div>
         </div>

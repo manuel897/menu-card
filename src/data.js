@@ -36,7 +36,7 @@ const data = [
                 price: 60,
             },
             {
-                name: 'Badan',
+                name: 'Badam',
                 price: 80,
             },
             {
