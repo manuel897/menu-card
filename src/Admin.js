@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import './admin.css';
+import CloseIcon from '@mui/icons-material/Close';
 
 class Admin extends React.Component {
     constructor(props) {
@@ -12,7 +14,6 @@ class Admin extends React.Component {
 
     componentDidMount() {
         fetch('http://localhost:8080/category')
-            // Retrieve its body as ReadableStream
             .then(response => response.json())
             .then(
                 menu => {
@@ -34,11 +35,32 @@ class Admin extends React.Component {
             );
     }
 
+    deleteCategory(index) {
+        let newCategories = this.state.categories.slice();
+        newCategories.splice(index, 1);
+        this.setState({ isLoaded: true, categories: newCategories });
+    }
+
+    deleteItem(itemIndex, categoryIndex) {
+        let newCategories = this.state.categories.slice();
+        newCategories[categoryIndex].items.splice(itemIndex, 1);
+        this.setState({ isLoaded: true, categories: newCategories });
+    }
+
     render() {
         let page = this.state.isLoaded ? (
             <div className="card-box">
                 {this.state.categories.map((category, index) => {
-                    return <Category category={category} />;
+                    return (
+                        <CategoryEditor
+                            categoryIndex={index}
+                            category={category}
+                            onDeleteCategory={() => this.deleteCategory(index)}
+                            onDeleteItem={(itemIndex, categoryIndex) =>
+                                this.deleteItem(itemIndex, categoryIndex)
+                            }
+                        />
+                    );
                 })}
             </div>
         ) : (
@@ -48,7 +70,7 @@ class Admin extends React.Component {
         return (
             <div className="app-box">
                 <h1 className="main-title font-face-pacifico">
-                    <u>Lord's Bakers</u>
+                    <u>Admin Page</u>
                 </h1>
                 {page}
             </div>
@@ -56,18 +78,33 @@ class Admin extends React.Component {
     }
 }
 
-class Category extends React.Component {
+class CategoryEditor extends React.Component {
+    deleteItem(itemIndex) {
+        this.props.onDeleteItem(itemIndex, this.props.categoryIndex);
+    }
+
     render() {
         return (
             <div>
-                <h3 className="category-title font-face-pacifico">
+                <h3 className="category-editor-title font-face-pacifico">
                     {this.props.category.name}
+                    <button
+                        className="delete-button"
+                        onClick={() => this.props.onDeleteCategory()}
+                    >
+                        <div className="icon-box">
+                            <CloseIcon />
+                        </div>
+                    </button>
                 </h3>
                 <ol>
                     {this.props.category.items.map((item, index) => {
                         return (
                             <li key={index}>
-                                <Item value={item} />
+                                <Item
+                                    value={item}
+                                    onDeleteItem={() => this.deleteItem(index)}
+                                />
                             </li>
                         );
                     })}
@@ -83,6 +120,14 @@ class Item extends React.Component {
             <div className="item-box">
                 <span>{this.props.value.name}</span>
                 <span>{this.props.value.price} </span>
+                <button
+                    className="delete-button"
+                    onClick={() => this.props.onDeleteItem()}
+                >
+                    <div className="icon-box">
+                        <CloseIcon />
+                    </div>
+                </button>
             </div>
         );
     }
