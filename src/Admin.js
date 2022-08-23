@@ -36,9 +36,14 @@ class Admin extends React.Component {
     }
 
     deleteCategory(index) {
-        let newCategories = this.state.categories.slice();
-        newCategories.splice(index, 1);
-        this.setState({ isLoaded: true, categories: newCategories });
+        const conformBox = window.confirm(
+            `Do you really want to delete the ${this.state.categories[0].name} category? All of its ${this.state.categories.length} items will be deleted as well`
+        );
+        if (conformBox) {
+            let newCategories = this.state.categories.slice();
+            newCategories.splice(index, 1);
+            this.setState({ isLoaded: true, categories: newCategories });
+        }
     }
 
     deleteItem(itemIndex, categoryIndex) {
