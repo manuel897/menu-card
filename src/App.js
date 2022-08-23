@@ -4,26 +4,66 @@ import React from 'react';
 import './App.css';
 import data from './data';
 
-function App() {
-    return (
-        <div className="app">
-            <div className="app-box">
-                <h1 className="main-title font-face-pacifico">
-                    <u>Lord's Bakers</u>
-                </h1>
-                <Card />
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoaded: false,
+            categories: [],
+        };
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:8080/category')
+            // Retrieve its body as ReadableStream
+            .then((response) => response.json())
+            .then(
+                (menu) => {
+                    //  const reader = response.body.getReader();
+                    console.log(menu);
+                    this.setState({
+                        isLoaded: true,
+                        categories: menu,
+                    });
+                    console.log(this.state[0]);
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: false,
+                        categories: [],
+                    });
+                    console.error(`ERROR ${error}`);
+                }
+            );
+    }
+
+    render() {
+        let page = this.state.isLoaded ? (
+            <Card categories={this.state.categories} />
+        ) : (
+            <div>Oops! Something went wrong</div>
+        );
+        return (
+            <div className="app">
+                <div className="app-box">
+                    <h1 className="main-title font-face-pacifico">
+                        <u>Lord's Bakers</u>
+                    </h1>
+                    {page}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 class Card extends React.Component {
     render() {
+        console.log(this.state);
         return (
             <div className="card-box">
-                <Category category={data[0]} />
-                <Category category={data[1]} />
-                <Category category={data[2]} />
+                {this.props.categories.map((category, index) => {
+                    return <Category category={category} />;
+                })}
             </div>
         );
     }
