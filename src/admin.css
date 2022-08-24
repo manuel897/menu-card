@@ -1,9 +1,5 @@
 /*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
 
-.font-face-pacifico {
-    font-family: 'Pacifico';
-}
-
 .app {
     margin: 0;
     text-align: center;
@@ -53,22 +49,6 @@
     /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 }
 
-.add-button {
-    height: 40px;
-    width: 40px;
-    color: white;
-    border: 3px solid green;
-    border-radius: 100%;
-    background-color: green;
-    display: inline-block;
-    margin-left: 2px;
-}
-
-.icon-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
 /* .App-logo {
     height: 40vmin;
     pointer-events: none;

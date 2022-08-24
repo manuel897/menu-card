@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import './admin.css';
+import './Shared.css';
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 
@@ -34,8 +35,10 @@ class Admin extends React.Component {
             );
     }
 
-    AddCategory() {
+    addCategory(e) {
         console.error('not implemented');
+        e.preventDefault();
+        window.location.href = 'http://localhost:3000/category';
     }
 
     deleteCategory(index) {
@@ -62,7 +65,7 @@ class Admin extends React.Component {
                     <h3>Create Category</h3>
                     <button
                         className="add-button"
-                        onClick={() => this.AddCategory()}
+                        onClick={e => this.addCategory(e)}
                     >
                         <div className="icon-box">
                             <AddIcon />

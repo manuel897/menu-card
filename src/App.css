@@ -9,6 +9,8 @@
     text-align: center;
     background-color: #f7efd8;
     font-family: 'Amatic_SC', cursive;
+    min-height: 100vh;
+    display: flex;
 }
 
 .app-box {

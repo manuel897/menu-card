@@ -1,0 +1,40 @@
+.font-face-pacifico {
+    font-family: 'Pacifico';
+}
+
+.add-button {
+    height: 40px;
+    width: 40px;
+    color: white;
+    border: 3px solid green;
+    border-radius: 100%;
+    background-color: green;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.standard-button {
+    background-color: #e67045;
+    border: 5px solid #e67045;
+    border-radius: 5px;
+    font-weight: 900;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.done-button {
+    background-color: green;
+    border: 5px solid green;
+    border-radius: 5px;
+    font-weight: 900;
+    color: white;
+    display: flex;
+    align-items: center;
+}
