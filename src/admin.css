@@ -11,7 +11,7 @@
     font-family: 'Amatic_SC', cursive;
 }
 
-.app-box {
+.admin-box {
     border: 20px solid #f6a466;
     padding: 1vh;
 }
@@ -42,6 +42,26 @@
     background-color: red;
     display: inline-block;
     margin-left: 1px;
+}
+
+.add-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: green;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+
+.add-button {
+    height: 40px;
+    width: 40px;
+    color: white;
+    border: 3px solid green;
+    border-radius: 100%;
+    background-color: green;
+    display: inline-block;
+    margin-left: 2px;
 }
 
 .icon-box {

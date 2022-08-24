@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import './admin.css';
 import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add';
 
 class Admin extends React.Component {
     constructor(props) {
@@ -17,8 +18,6 @@ class Admin extends React.Component {
             .then(response => response.json())
             .then(
                 menu => {
-                    //  const reader = response.body.getReader();
-                    console.log(menu);
                     this.setState({
                         isLoaded: true,
                         categories: menu,
@@ -33,6 +32,10 @@ class Admin extends React.Component {
                     console.error(`ERROR ${error}`);
                 }
             );
+    }
+
+    AddCategory() {
+        console.error('not implemented');
     }
 
     deleteCategory(index) {
@@ -55,6 +58,18 @@ class Admin extends React.Component {
     render() {
         let page = this.state.isLoaded ? (
             <div className="card-box">
+                <div className="add-button-box font-face-pacifico ">
+                    <h3>Create Category</h3>
+                    <button
+                        className="add-button"
+                        onClick={() => this.AddCategory()}
+                    >
+                        <div className="icon-box">
+                            <AddIcon />
+                        </div>
+                    </button>
+                </div>
+
                 {this.state.categories.map((category, index) => {
                     return (
                         <CategoryEditor
@@ -73,10 +88,10 @@ class Admin extends React.Component {
         );
 
         return (
-            <div className="app-box">
-                <h1 className="main-title font-face-pacifico">
+            <div className="admin-box">
+                <h4 className="main-title font-face-pacifico">
                     <u>Admin Page</u>
-                </h1>
+                </h4>
                 {page}
             </div>
         );
