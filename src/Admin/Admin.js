@@ -31,6 +31,7 @@ class Admin extends React.Component {
                         isLoaded: false,
                         categories: [],
                     });
+                    // TODO handle error
                     console.error(`ERROR ${error}`);
                 }
             );
@@ -59,6 +60,28 @@ class Admin extends React.Component {
         this.setState({ isLoaded: true, categories: newCategories });
     }
 
+    resetMenu() {
+        console.log(this.state);
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(this.state.categories),
+        };
+        window
+            .fetch('http://localhost:8080/category/reset', requestOptions)
+            .then(
+                res => {
+                    // TODO check status of response
+                    window.location.href = 'http://localhost:3000/';
+                },
+                error => {
+                    console.error(error);
+                    window.alert('Something went wrong. Try again later');
+                }
+            )
+            .then(categories => console.log(categories));
+    }
+
     render() {
         let page = this.state.isLoaded ? (
             <div>
@@ -66,7 +89,7 @@ class Admin extends React.Component {
                     <div>
                         <button
                             className="done-button"
-                            onClick={e => this.addCategory(e)}
+                            onClick={() => this.resetMenu()}
                         >
                             Done
                             <div className="icon-box">
@@ -98,14 +121,18 @@ class Admin extends React.Component {
 
                 {this.state.categories.map((category, index) => {
                     return (
-                        <CategoryEditor
-                            categoryIndex={index}
-                            category={category}
-                            onDeleteCategory={() => this.deleteCategory(index)}
-                            onDeleteItem={(itemIndex, categoryIndex) =>
-                                this.deleteItem(itemIndex, categoryIndex)
-                            }
-                        />
+                        <div>
+                            <CategoryEditor
+                                categoryIndex={index}
+                                category={category}
+                                onDeleteCategory={() =>
+                                    this.deleteCategory(index)
+                                }
+                                onDeleteItem={(itemIndex, categoryIndex) =>
+                                    this.deleteItem(itemIndex, categoryIndex)
+                                }
+                            />
+                        </div>
                     );
                 })}
             </div>

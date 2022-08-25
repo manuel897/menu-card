@@ -72,7 +72,7 @@ class CategoryCreator extends React.Component {
             fieldsEmpty = true;
         }
         this.state.items.forEach(item => {
-            if (item.name === '' || item.price == 0) {
+            if (item.name === '' || item.price === 0) {
                 fieldsEmpty = true;
             }
         });

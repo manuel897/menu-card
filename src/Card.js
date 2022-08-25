@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-class Admin extends React.Component {
+class Card extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,19 +16,17 @@ class Admin extends React.Component {
             .then(response => response.json())
             .then(
                 menu => {
-                    //  const reader = response.body.getReader();
-                    console.log(menu);
                     this.setState({
                         isLoaded: true,
                         categories: menu,
                     });
-                    console.log(this.state[0]);
                 },
                 error => {
                     this.setState({
                         isLoaded: false,
                         categories: [],
                     });
+                    // TODO handle error
                     console.error(`ERROR ${error}`);
                 }
             );
@@ -38,7 +36,7 @@ class Admin extends React.Component {
         let page = this.state.isLoaded ? (
             <div>
                 {this.state.categories.map((category, index) => {
-                    return <Category category={category} />;
+                    return <Category key={index} category={category} />;
                 })}
             </div>
         ) : (
@@ -88,4 +86,4 @@ class Item extends React.Component {
     }
 }
 
-export default Admin;
+export default Card;
