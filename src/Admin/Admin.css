@@ -1,35 +1,20 @@
 /*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
 
-.font-face-pacifico {
-    font-family: 'Pacifico';
-}
-
-.app {
-    margin: 0;
-    text-align: center;
-    background-color: #f7efd8;
-    font-family: 'Amatic_SC', cursive;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-}
-
-.app div {
-    flex-grow: 1;
-}
-
-.app-box {
+.admin-box {
+    text-align: left;
     border: 20px solid #f6a466;
     padding: 1vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f6a466;
 }
 
 .main-title {
-    color: #be7332;
+    color: #f7efd8;
     font-weight: 900;
 }
 
-.category-title {
-    color: #e67045;
+.category-editor-title {
+    /* color: #e67045; */
     font-weight: 800;
 }
 
@@ -38,6 +23,15 @@
     justify-content: space-between;
     margin-right: 20px;
     border-bottom: 1px dashed;
+}
+
+.add-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: green;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 }
 
 /* .App-logo {

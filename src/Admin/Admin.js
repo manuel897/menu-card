@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-import './admin.css';
-import './Shared.css';
+import './../App.css';
+import './Admin.css';
+import './../Shared.css';
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 
@@ -23,7 +23,6 @@ class Admin extends React.Component {
                         isLoaded: true,
                         categories: menu,
                     });
-                    console.log(this.state[0]);
                 },
                 error => {
                     this.setState({
@@ -60,18 +59,16 @@ class Admin extends React.Component {
 
     render() {
         let page = this.state.isLoaded ? (
-            <div className="card-box">
-                <div className="add-button-box font-face-pacifico ">
-                    <h3>Create Category</h3>
-                    <button
-                        className="add-button"
-                        onClick={e => this.addCategory(e)}
-                    >
-                        <div className="icon-box">
-                            <AddIcon />
-                        </div>
-                    </button>
-                </div>
+            <div>
+                <button
+                    className="standard-button"
+                    onClick={e => this.addCategory(e)}
+                >
+                    Add Category
+                    <div className="icon-box">
+                        <AddIcon />
+                    </div>
+                </button>
 
                 {this.state.categories.map((category, index) => {
                     return (
@@ -92,7 +89,7 @@ class Admin extends React.Component {
 
         return (
             <div className="admin-box">
-                <h4 className="main-title font-face-pacifico">
+                <h4 className="main-title">
                     <u>Admin Page</u>
                 </h4>
                 {page}
@@ -109,7 +106,7 @@ class CategoryEditor extends React.Component {
     render() {
         return (
             <div>
-                <h3 className="category-editor-title font-face-pacifico">
+                <h3 className="category-editor-title">
                     {this.props.category.name}
                     <button
                         className="delete-button"

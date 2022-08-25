@@ -36,7 +36,7 @@ class Admin extends React.Component {
 
     render() {
         let page = this.state.isLoaded ? (
-            <div className="card-box">
+            <div>
                 {this.state.categories.map((category, index) => {
                     return <Category category={category} />;
                 })}

@@ -4,15 +4,21 @@
     flex-direction: column;
     border: 20px solid #f6a466;
     padding: 1vh;
+
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f6a466;
 }
 
 .category-creator-box h1 {
     align-self: center;
 }
+
 .item-creator-box {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 2fr 0.25fr 1fr;
+    grid-template-columns: 1.5fr 0.1fr 0.75fr 0.75fr;
+    margin-bottom: 2px;
 }
 
 .item-creator-box input {
@@ -21,4 +27,16 @@
 
 .item-creator-box span {
     text-align: center;
+}
+
+.item-creator-box div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: 1fr;
 }

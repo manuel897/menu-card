@@ -2,7 +2,7 @@
 // import ReactDOM from 'react-dom/client';
 import React from 'react';
 import Card from './Card';
-import Admin from './Admin';
+import Admin from './Admin/Admin';
 import CategoryCreator from './CategoryCreator/CategoryCreator';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
