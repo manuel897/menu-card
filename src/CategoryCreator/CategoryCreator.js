@@ -86,7 +86,6 @@ class CategoryCreator extends React.Component {
     }
 
     deleteItem(index) {
-        console.log(`delete ${index}`);
         let newItems = this.state.items.slice();
         newItems.splice(index, 1);
         this.setState({ items: newItems });
@@ -109,12 +108,11 @@ class CategoryCreator extends React.Component {
     }
 
     render() {
-        console.log('render()');
         return (
             <div className="category-creator-box">
-                <h4 className="main-title">
-                    <u>New Category</u>
-                </h4>
+                <h2 className="admin-title">
+                    <b>New Category</b>
+                </h2>
                 <form>
                     <input
                         type="text"
@@ -127,7 +125,7 @@ class CategoryCreator extends React.Component {
                     {this.state.items.map((item, index) => {
                         return (
                             <li key={index}>
-                                <div className="item-creator-box">
+                                <div className="edit-item-box">
                                     <div>
                                         <input
                                             type="text"
@@ -176,7 +174,6 @@ class CategoryCreator extends React.Component {
                         <AddIcon />
                     </div>
                 </button>
-                <br />
                 <div className="buttons-box">
                     <div>
                         <button

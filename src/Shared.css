@@ -2,15 +2,9 @@
     font-family: 'Pacifico';
 }
 
-.add-button {
-    height: 40px;
-    width: 40px;
-    color: white;
-    border: 3px solid green;
-    border-radius: 100%;
-    background-color: green;
-    display: inline-block;
-    margin-left: 2px;
+.admin-title {
+    color: #be7332;
+    font-weight: 900;
 }
 
 .icon-box {
@@ -20,8 +14,8 @@
 }
 
 .standard-button {
-    background-color: #be7332;
-    border: 5px solid #be7332;
+    background-color: #e67045;
+    border: 5px solid #e67045;
     border-radius: 5px;
     font-weight: 900;
     color: white;
@@ -49,4 +43,33 @@
     color: white;
     display: flex;
     align-items: center;
+}
+
+.edit-item-box {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1.5fr 0.1fr 0.75fr 0.75fr;
+    margin-bottom: 2px;
+}
+
+.buttons-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin: 10px;
+    /* background-color: yellowgreen;
+    border: red 2px solid; */
+}
+
+.category-creator-box {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    /* border: 20px solid #f6a466; */
+    border-left: 15vw solid #be7332;
+    padding: 1vh;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f7efd8;
+    padding-left: 5vw;
 }

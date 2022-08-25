@@ -4,6 +4,8 @@ import './Admin.css';
 import './../Shared.css';
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
+import DoneIcon from '@mui/icons-material/Done';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 class Admin extends React.Component {
     constructor(props) {
@@ -60,6 +62,30 @@ class Admin extends React.Component {
     render() {
         let page = this.state.isLoaded ? (
             <div>
+                <div className="buttons-box">
+                    <div>
+                        <button
+                            className="done-button"
+                            onClick={e => this.addCategory(e)}
+                        >
+                            Done
+                            <div className="icon-box">
+                                <DoneIcon />
+                            </div>
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            className="standard-button"
+                            onClick={e => this.addCategory(e)}
+                        >
+                            Cancel
+                            <div className="icon-box">
+                                <ArrowBackIcon />
+                            </div>
+                        </button>
+                    </div>
+                </div>
                 <button
                     className="standard-button"
                     onClick={e => this.addCategory(e)}
@@ -88,10 +114,10 @@ class Admin extends React.Component {
         );
 
         return (
-            <div className="admin-box">
-                <h4 className="main-title">
-                    <u>Admin Page</u>
-                </h4>
+            <div className="category-creator-box">
+                <h2 className="admin-title">
+                    <b>Edit Categories</b>
+                </h2>
                 {page}
             </div>
         );
@@ -137,9 +163,10 @@ class CategoryEditor extends React.Component {
 class Item extends React.Component {
     render() {
         return (
-            <div className="item-box">
-                <span>{this.props.value.name}</span>
-                <span>{this.props.value.price} </span>
+            <div className="edit-item-box">
+                <div>{this.props.value.name}</div>
+                <span></span>
+                <div>{this.props.value.price} </div>
                 <button
                     className="delete-button"
                     onClick={() => this.props.onDeleteItem()}
