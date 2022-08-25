@@ -5,7 +5,6 @@ import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CloseIcon from '@mui/icons-material/Close';
-import { unmountComponentAtNode } from 'react-dom';
 
 class CategoryCreator extends React.Component {
     constructor(props) {
@@ -88,13 +87,29 @@ class CategoryCreator extends React.Component {
 
     deleteItem(index) {
         console.log(`delete ${index}`);
-        // unmountComponentAtNode(document.getElementById('item-' + index));
         let newItems = this.state.items.slice();
         newItems.splice(index, 1);
-        this.setState({ name: this.state.name, items: newItems });
+        this.setState({ items: newItems });
+    }
+
+    handleNameChange(e, index) {
+        let newItems = this.state.items.slice();
+        newItems[index].name = e.target.value;
+        this.setState({
+            items: newItems,
+        });
+    }
+
+    handlePriceChange(e, index) {
+        let newItems = this.state.items.slice();
+        newItems[index].price = e.target.value;
+        this.setState({
+            items: newItems,
+        });
     }
 
     render() {
+        console.log('render()');
         return (
             <div className="category-creator-box">
                 <h4 className="main-title">
@@ -112,14 +127,41 @@ class CategoryCreator extends React.Component {
                     {this.state.items.map((item, index) => {
                         return (
                             <li key={index}>
-                                <ItemCreator
-                                    index={index}
-                                    value={item}
-                                    updateItem={(index, newItem) => {
-                                        this.updateItem(index, newItem);
-                                    }}
-                                    deleteItem={index => this.deleteItem(index)}
-                                />
+                                <div className="item-creator-box">
+                                    <div>
+                                        <input
+                                            type="text"
+                                            value={item.name}
+                                            onChange={e =>
+                                                this.handleNameChange(e, index)
+                                            }
+                                            placeholder="Item name"
+                                        />
+                                    </div>
+                                    <span></span>
+                                    <div>
+                                        <input
+                                            type="number"
+                                            value={item.price}
+                                            onChange={e =>
+                                                this.handlePriceChange(e, index)
+                                            }
+                                            placeholder="price"
+                                        />
+                                    </div>
+                                    <div>
+                                        <button
+                                            className="delete-button"
+                                            onClick={() =>
+                                                this.deleteItem(index)
+                                            }
+                                        >
+                                            <div className="icon-box">
+                                                <CloseIcon />
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
                             </li>
                         );
                     })}
@@ -162,97 +204,6 @@ class CategoryCreator extends React.Component {
                         </button>
                     </div>
                 </div>
-            </div>
-        );
-    }
-}
-
-class ItemCreator extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: this.props.value.name,
-            price: this.props.value.price,
-        };
-
-        this.handleNameChange = this.handleNameChange.bind(this);
-        this.handlePriceChange = this.handlePriceChange.bind(this);
-    }
-
-    handleNameChange(e) {
-        this.setState(
-            {
-                name: e.target.value,
-            },
-            () => this.props.updateItem(this.props.index, this.state)
-        );
-    }
-
-    handlePriceChange(e) {
-        this.setState(
-            {
-                price: e.target.value,
-            },
-            () => this.props.updateItem(this.props.index, this.state)
-        );
-    }
-
-    deleteItem() {
-        this.props.deleteItem(this.props.index);
-    }
-
-    render() {
-        console.log(`render item`);
-        // console.log(this.state);
-
-        return (
-            <div id={'item-' + this.props.index} className="item-creator-box">
-                <div>
-                    <input
-                        type="text"
-                        value={this.props.value.name}
-                        onChange={this.handleNameChange}
-                        placeholder="Item name"
-                    />
-                </div>
-                <span></span>
-                <div>
-                    <input
-                        type="number"
-                        value={this.props.value.price}
-                        onChange={this.handlePriceChange}
-                        placeholder="price"
-                    />
-                </div>
-                <div>
-                    <button
-                        className="delete-button"
-                        onClick={() => this.deleteItem()}
-                    >
-                        <div className="icon-box">
-                            <CloseIcon />
-                        </div>
-                    </button>
-                </div>
-
-                {/* <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Item name:
-                        <input
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.handleNameChange}
-                        />
-                    </label>
-                    <label>
-                        Price:
-                        <input
-                            type="number"
-                            value={this.state.price}
-                            onChange={this.handlePriceChange}
-                        />
-                    </label>
-                </form> */}
             </div>
         );
     }
