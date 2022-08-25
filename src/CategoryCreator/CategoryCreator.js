@@ -139,7 +139,7 @@ class CategoryCreator extends React.Component {
                                     <span></span>
                                     <div>
                                         <input
-                                            type="number"
+                                            type="text"
                                             value={item.price}
                                             onChange={e =>
                                                 this.handlePriceChange(e, index)
