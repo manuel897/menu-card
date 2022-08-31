@@ -61,7 +61,7 @@ class CategoryCreator extends React.Component {
                 .then(category => console.log(category));
         } else {
             window.alert(
-                'Some fields are empty.Please fill all fileds to contine'
+                'Some fields are empty.Please fill all fileds to continue'
             );
         }
     }
