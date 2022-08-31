@@ -52,12 +52,10 @@ class Login extends React.Component {
             window
                 .fetch('http://localhost:8080/auth/login', requestOptions)
                 .then(res => {
-                    console.log(res.status);
                     switch (res.status) {
                         case 200:
                             res.json().then(
                                 res => {
-                                    console.log(res.status);
                                     this.props.setJwt(res.token);
                                 },
                                 error => {
