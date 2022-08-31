@@ -6,35 +6,15 @@ import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Login from '../Login/Login';
 
 class Admin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoaded: false,
+            jwt: '',
             categories: [],
         };
-    }
-
-    componentDidMount() {
-        fetch('http://localhost:8080/category')
-            .then(response => response.json())
-            .then(
-                menu => {
-                    this.setState({
-                        isLoaded: true,
-                        categories: menu,
-                    });
-                },
-                error => {
-                    this.setState({
-                        isLoaded: false,
-                        categories: [],
-                    });
-                    // TODO handle error
-                    console.error(`ERROR ${error}`);
-                }
-            );
     }
 
     addCategory(e) {
@@ -50,14 +30,14 @@ class Admin extends React.Component {
         if (conformBox) {
             let newCategories = this.state.categories.slice();
             newCategories.splice(index, 1);
-            this.setState({ isLoaded: true, categories: newCategories });
+            this.setState({ categories: newCategories });
         }
     }
 
     deleteItem(itemIndex, categoryIndex) {
         let newCategories = this.state.categories.slice();
         newCategories[categoryIndex].items.splice(itemIndex, 1);
-        this.setState({ isLoaded: true, categories: newCategories });
+        this.setState({ categories: newCategories });
     }
 
     resetMenu() {
@@ -78,72 +58,104 @@ class Admin extends React.Component {
                     console.error(error);
                     window.alert('Something went wrong. Try again later');
                 }
-            )
-            .then(categories => console.log(categories));
+            );
     }
 
-    render() {
-        let page = this.state.isLoaded ? (
-            <div>
-                <div className="buttons-box">
-                    <div>
-                        <button
-                            className="done-button"
-                            onClick={() => this.resetMenu()}
-                        >
-                            Done
-                            <div className="icon-box">
-                                <DoneIcon />
-                            </div>
-                        </button>
-                    </div>
-                    <div>
-                        <button
-                            className="standard-button"
-                            onClick={e => this.addCategory(e)}
-                        >
-                            Cancel
-                            <div className="icon-box">
-                                <ArrowBackIcon />
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <button
-                    className="standard-button"
-                    onClick={e => this.addCategory(e)}
-                >
-                    Add Category
-                    <div className="icon-box">
-                        <AddIcon />
-                    </div>
-                </button>
-
-                {this.state.categories.map((category, index) => {
-                    return (
-                        <div>
-                            <CategoryEditor
-                                categoryIndex={index}
-                                category={category}
-                                onDeleteCategory={() =>
-                                    this.deleteCategory(index)
-                                }
-                                onDeleteItem={(itemIndex, categoryIndex) =>
-                                    this.deleteItem(itemIndex, categoryIndex)
-                                }
-                            />
-                        </div>
-                    );
-                })}
-            </div>
-        ) : (
-            <div>Oops! Something went wrong</div>
+    setJwt(jwt) {
+        this.setState(
+            {
+                jwt: jwt,
+            },
+            () => this.getData()
         );
+    }
+
+    getData() {
+        fetch('http://localhost:8080/category')
+            .then(response => response.json())
+            .then(
+                menu => {
+                    this.setState({
+                        isLoaded: true,
+                        categories: menu,
+                    });
+                },
+                error => {
+                    this.setState({
+                        isLoaded: false,
+                        categories: [],
+                    });
+                    // TODO handle error
+                    console.error(`ERROR ${error}`);
+                }
+            );
+    }
+    render() {
+        let page =
+            this.state.jwt === '' ? (
+                <Login setJwt={jwt => this.setJwt(jwt)} />
+            ) : (
+                <div>
+                    <div className="buttons-box">
+                        <div>
+                            <button
+                                className="done-button"
+                                onClick={() => this.resetMenu()}
+                            >
+                                Done
+                                <div className="icon-box">
+                                    <DoneIcon />
+                                </div>
+                            </button>
+                        </div>
+                        <div>
+                            <button
+                                className="standard-button"
+                                onClick={e => this.addCategory(e)}
+                            >
+                                Cancel
+                                <div className="icon-box">
+                                    <ArrowBackIcon />
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <button
+                        className="standard-button"
+                        onClick={e => this.addCategory(e)}
+                    >
+                        Add Category
+                        <div className="icon-box">
+                            <AddIcon />
+                        </div>
+                    </button>
+
+                    {this.state.categories.map((category, index) => {
+                        return (
+                            <div>
+                                <CategoryEditor
+                                    categoryIndex={index}
+                                    category={category}
+                                    onDeleteCategory={() =>
+                                        this.deleteCategory(index)
+                                    }
+                                    onDeleteItem={(itemIndex, categoryIndex) =>
+                                        this.deleteItem(
+                                            itemIndex,
+                                            categoryIndex
+                                        )
+                                    }
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+            );
 
         return (
             <div className="category-creator-box">
                 <h2 className="admin-title">
-                    <b>Edit Categories</b>
+                    <b>Admin</b>
                 </h2>
                 {page}
             </div>
