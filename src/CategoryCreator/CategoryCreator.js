@@ -2,9 +2,8 @@ import React from 'react';
 import './CategoryCreator.css';
 import './../Shared.css';
 import AddIcon from '@mui/icons-material/Add';
-import DoneIcon from '@mui/icons-material/Done';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CloseIcon from '@mui/icons-material/Close';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 class CategoryCreator extends React.Component {
     constructor(props) {
@@ -14,7 +13,7 @@ class CategoryCreator extends React.Component {
             items: [
                 {
                     name: '',
-                    price: 0,
+                    price: '',
                 },
             ],
         };
@@ -32,33 +31,22 @@ class CategoryCreator extends React.Component {
         let newItems = this.state.items.slice();
         newItems.push({
             name: '',
-            price: 0,
+            price: '',
         });
         this.setState({ items: newItems });
     }
 
     createCategory() {
         if (!this.areFieldsEmpty()) {
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(this.state),
-            };
-            window
-                .fetch('http://localhost:8080/category/add', requestOptions)
-                .then(
-                    res => {
-                        // TODO check status of response
-                        window.location.href = 'http://localhost:3000/admin';
+            this.props.addCategory(this.state);
+            this.setState({
+                items: [
+                    {
+                        name: '',
+                        price: '',
                     },
-                    error => {
-                        console.error(error);
-                        window.alert(
-                            'The category could not be created. Make sure all fields are filled'
-                        );
-                    }
-                )
-                .then(category => console.log(category));
+                ],
+            });
         } else {
             window.alert(
                 'Some fields are empty.Please fill all fileds to continue'
@@ -72,7 +60,7 @@ class CategoryCreator extends React.Component {
             fieldsEmpty = true;
         }
         this.state.items.forEach(item => {
-            if (item.name === '' || item.price === 0) {
+            if (item.name === '' || item.price === '') {
                 fieldsEmpty = true;
             }
         });
@@ -109,15 +97,13 @@ class CategoryCreator extends React.Component {
 
     render() {
         return (
-            <div className="category-creator-box">
-                <h2 className="admin-title">
-                    <b>New Category</b>
-                </h2>
+            <div className="category-add-box">
                 <form>
                     <input
+                        id="category-name-input"
                         type="text"
                         value={this.state.categoryName}
-                        onChange={this.handleChange}
+                        onChange={e => this.handleChange(e)}
                         placeholder="Category name"
                     />
                 </form>
@@ -144,7 +130,7 @@ class CategoryCreator extends React.Component {
                                             onChange={e =>
                                                 this.handlePriceChange(e, index)
                                             }
-                                            placeholder="price"
+                                            placeholder="detail"
                                         />
                                     </div>
                                     <div>
@@ -165,15 +151,6 @@ class CategoryCreator extends React.Component {
                     })}
                 </ol>
 
-                <button
-                    className="standard-button"
-                    onClick={e => this.addItem(e)}
-                >
-                    Add item
-                    <div className="icon-box">
-                        <AddIcon />
-                    </div>
-                </button>
                 <div className="buttons-box">
                     <div>
                         <button
@@ -181,22 +158,19 @@ class CategoryCreator extends React.Component {
                             onClick={e => this.createCategory()}
                         >
                             <div className="icon-box">
-                                Done
-                                <DoneIcon />
+                                Create Category
+                                <AddCircleIcon />
                             </div>
                         </button>
                     </div>
                     <div>
                         <button
                             className="standard-button"
-                            onClick={() => {
-                                window.location.href =
-                                    'http://localhost:3000/admin';
-                            }}
+                            onClick={e => this.addItem(e)}
                         >
+                            Add item
                             <div className="icon-box">
-                                Back
-                                <ArrowBackIcon />
+                                <AddIcon />
                             </div>
                         </button>
                     </div>
