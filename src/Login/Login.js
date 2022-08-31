@@ -3,7 +3,6 @@ import './../App.css';
 import './Login.css';
 import './../Shared.css';
 import LoginIcon from '@mui/icons-material/Login';
-import DoneIcon from '@mui/icons-material/Done';
 
 class Login extends React.Component {
     constructor(props) {
