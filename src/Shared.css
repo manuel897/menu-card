@@ -2,11 +2,6 @@
     font-family: 'Pacifico';
 }
 
-.admin-title {
-    color: #be7332;
-    font-weight: 900;
-}
-
 .icon-box {
     display: flex;
     align-items: center;
@@ -57,19 +52,4 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     margin: 10px;
-    /* background-color: yellowgreen;
-    border: red 2px solid; */
-}
-
-.category-creator-box {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    /* border: 20px solid #f6a466; */
-    border-left: 15vw solid #be7332;
-    padding: 1vh;
-    text-align: left;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #f7efd8;
-    padding-left: 5vw;
 }
