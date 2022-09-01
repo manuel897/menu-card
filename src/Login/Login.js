@@ -81,25 +81,21 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <form>
-                        <input
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.handleUsernameChange}
-                            placeholder="Username"
-                        />
-                    </form>
-                    <form>
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handlePasswordChange}
-                            placeholder="password"
-                        />
-                    </form>
-                </div>
+            <div className="login-box">
+                <input
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.handleUsernameChange}
+                    placeholder="Username"
+                />
+
+                <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handlePasswordChange}
+                    placeholder="password"
+                />
+
                 <button
                     className="standard-button"
                     onClick={() => this.login()}
