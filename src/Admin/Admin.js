@@ -3,10 +3,10 @@ import './../App.css';
 import './Admin.css';
 import './../Shared.css';
 import CloseIcon from '@mui/icons-material/Close';
-import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Login from '../Login/Login';
+import CategoryCreator from '../CategoryCreator/CategoryCreator';
 
 class Admin extends React.Component {
     constructor(props) {
@@ -14,13 +14,20 @@ class Admin extends React.Component {
         this.state = {
             jwt: '',
             categories: [],
+            activeMode: 'delete',
         };
     }
 
-    addCategory(e) {
-        console.error('not implemented');
+    goBack(e) {
         e.preventDefault();
-        window.location.href = 'http://localhost:3000/category';
+        window.location.href = 'http://localhost:3000/';
+    }
+
+    addCategory(category) {
+        console.log('add category' + category.name);
+        let newCategories = this.state.categories.slice();
+        newCategories.unshift(category);
+        this.setState({ categories: newCategories });
     }
 
     deleteCategory(index) {
@@ -41,22 +48,30 @@ class Admin extends React.Component {
     }
 
     resetMenu() {
-        console.log(this.state);
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + this.state.jwt,
+            },
             body: JSON.stringify(this.state.categories),
         };
+
         window
             .fetch('http://localhost:8080/category/reset', requestOptions)
             .then(
                 res => {
-                    // TODO check status of response
-                    window.location.href = 'http://localhost:3000/';
+                    if (res.status == 200) {
+                        window.location.href = 'http://localhost:3000/';
+                    } else {
+                        window.alert(
+                            'Something went wrong. Try reloading the page'
+                        );
+                    }
                 },
                 error => {
                     console.error(error);
-                    window.alert('Something went wrong. Try again later');
+                    // window.alert('Something went wrong. Try again later');
                 }
             );
     }
@@ -71,13 +86,22 @@ class Admin extends React.Component {
     }
 
     getData() {
-        fetch('http://localhost:8080/category')
-            .then(response => response.json())
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                //  Authorization: 'Bearer ' + this.state.jwt,
+            },
+        };
+
+        window
+            .fetch('http://localhost:8080/category', requestOptions)
+            .then(res => res.json())
             .then(
-                menu => {
+                data => {
                     this.setState({
                         isLoaded: true,
-                        categories: menu,
+                        categories: data,
                     });
                 },
                 error => {
@@ -90,8 +114,24 @@ class Admin extends React.Component {
                 }
             );
     }
+
     render() {
-        let page =
+        let deleteModeSection = this.state.categories.map((category, index) => {
+            return (
+                <div>
+                    <CategoryEditor
+                        categoryIndex={index}
+                        category={category}
+                        onDeleteCategory={() => this.deleteCategory(index)}
+                        onDeleteItem={(itemIndex, categoryIndex) =>
+                            this.deleteItem(itemIndex, categoryIndex)
+                        }
+                    />
+                </div>
+            );
+        });
+
+        let editorSection =
             this.state.jwt === '' ? (
                 <Login setJwt={jwt => this.setJwt(jwt)} />
             ) : (
@@ -108,10 +148,11 @@ class Admin extends React.Component {
                                 </div>
                             </button>
                         </div>
+
                         <div>
                             <button
                                 className="standard-button"
-                                onClick={e => this.addCategory(e)}
+                                onClick={e => this.goBack(e)}
                             >
                                 Cancel
                                 <div className="icon-box">
@@ -120,44 +161,19 @@ class Admin extends React.Component {
                             </button>
                         </div>
                     </div>
-                    <button
-                        className="standard-button"
-                        onClick={e => this.addCategory(e)}
-                    >
-                        Add Category
-                        <div className="icon-box">
-                            <AddIcon />
-                        </div>
-                    </button>
 
-                    {this.state.categories.map((category, index) => {
-                        return (
-                            <div>
-                                <CategoryEditor
-                                    categoryIndex={index}
-                                    category={category}
-                                    onDeleteCategory={() =>
-                                        this.deleteCategory(index)
-                                    }
-                                    onDeleteItem={(itemIndex, categoryIndex) =>
-                                        this.deleteItem(
-                                            itemIndex,
-                                            categoryIndex
-                                        )
-                                    }
-                                />
-                            </div>
-                        );
-                    })}
+                    <CategoryCreator addCategory={c => this.addCategory(c)} />
+
+                    {deleteModeSection}
                 </div>
             );
 
         return (
-            <div className="category-creator-box">
+            <div className="admin-page-box">
                 <h2 className="admin-title">
                     <b>Admin</b>
                 </h2>
-                {page}
+                {editorSection}
             </div>
         );
     }
