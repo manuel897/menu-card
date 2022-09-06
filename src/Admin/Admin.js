@@ -7,6 +7,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Login from '../Login/Login';
 import CategoryCreator from '../CategoryCreator/CategoryCreator';
+import { BACKEND_URL, SELF_URL } from '../Shared';
 
 class Admin extends React.Component {
     constructor(props) {
@@ -20,11 +21,10 @@ class Admin extends React.Component {
 
     goBack(e) {
         e.preventDefault();
-        window.location.href = 'http://localhost:3000/';
+        window.location.href = SELF_URL;
     }
 
     addCategory(category) {
-        console.log('add category' + category.name);
         let newCategories = this.state.categories.slice();
         newCategories.unshift(category);
         this.setState({ categories: newCategories });
@@ -48,6 +48,7 @@ class Admin extends React.Component {
     }
 
     resetMenu() {
+        console.log(this.state.categories);
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -57,23 +58,21 @@ class Admin extends React.Component {
             body: JSON.stringify(this.state.categories),
         };
 
-        window
-            .fetch('http://localhost:8080/category/reset', requestOptions)
-            .then(
-                res => {
-                    if (res.status == 200) {
-                        window.location.href = 'http://localhost:3000/';
-                    } else {
-                        window.alert(
-                            'Something went wrong. Try reloading the page'
-                        );
-                    }
-                },
-                error => {
-                    console.error(error);
-                    // window.alert('Something went wrong. Try again later');
+        window.fetch(BACKEND_URL + '/category/reset', requestOptions).then(
+            res => {
+                if (res.status == 200) {
+                    window.location.href = SELF_URL;
+                } else {
+                    window.alert(
+                        'Something went wrong. Try reloading the page'
+                    );
                 }
-            );
+            },
+            error => {
+                console.error(error);
+                // window.alert('Something went wrong. Try again later');
+            }
+        );
     }
 
     setJwt(jwt) {
@@ -95,7 +94,7 @@ class Admin extends React.Component {
         };
 
         window
-            .fetch('http://localhost:8080/category', requestOptions)
+            .fetch(BACKEND_URL + '/category', requestOptions)
             .then(res => res.json())
             .then(
                 data => {

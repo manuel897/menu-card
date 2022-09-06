@@ -3,6 +3,7 @@ import './../App.css';
 import './Login.css';
 import './../Shared.css';
 import LoginIcon from '@mui/icons-material/Login';
+import { BACKEND_URL } from '../Shared';
 
 class Login extends React.Component {
     constructor(props) {
@@ -49,7 +50,7 @@ class Login extends React.Component {
             };
 
             window
-                .fetch('http://localhost:8080/auth/login', requestOptions)
+                .fetch(BACKEND_URL + '/auth/login', requestOptions)
                 .then(res => {
                     switch (res.status) {
                         case 200:

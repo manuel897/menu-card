@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { BACKEND_URL } from './Shared';
 
 class Card extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class Card extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/category')
+        fetch(BACKEND_URL + '/category')
             // Retrieve its body as ReadableStream
             .then(response => response.json())
             .then(
