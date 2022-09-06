@@ -1,5 +1,5 @@
 # pull the official base image
-FROM node:alpine as build
+FROM node:16.17.0 as build
 # set working direction
 WORKDIR /app
 # add `/app/node_modules/.bin` to $PATH
