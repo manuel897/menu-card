@@ -12,28 +12,35 @@ class Card extends React.Component {
     }
 
     componentDidMount() {
-        fetch(BACKEND_URL + '/category')
-            // Retrieve its body as ReadableStream
-            .then(response => response.json())
-            .then(
-                menu => {
-                    this.setState({
-                        isLoaded: true,
-                        categories: menu,
-                    });
-                },
-                error => {
-                    this.setState({
-                        isLoaded: false,
-                        categories: [],
-                    });
-                    // TODO handle error
-                    console.error(`ERROR ${error}`);
-                }
-            );
+        let retryCounter = 0;
+        const loadData = retryCount => {
+            if (retryCount < 4) {
+                console.log('loadData() retry' + retryCount);
+                fetch(BACKEND_URL + '/category')
+                    // Retrieve its body as ReadableStream
+                    .then(response => response.json())
+                    .then(
+                        menu => {
+                            this.setState({
+                                isLoaded: true,
+                                categories: menu,
+                            });
+                        },
+                        error => {
+                            console.log('trying again...');
+                            setTimeout(() => {
+                                loadData(++retryCount);
+                            }, 500);
+                            console.error(`ERROR ${error}`);
+                        }
+                    );
+            }
+        };
+        loadData(0);
     }
 
     render() {
+        console.log('render()');
         let page = this.state.isLoaded ? (
             <div>
                 {this.state.categories.map((category, index) => {
