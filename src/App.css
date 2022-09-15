@@ -9,6 +9,14 @@
     text-align: center;
     background-color: #f7efd8;
     font-family: 'Amatic_SC', cursive;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    font-size: larger;
+}
+
+.app div {
+    flex-grow: 1;
 }
 
 .app-box {

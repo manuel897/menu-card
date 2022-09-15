@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './fonts/Pacifico/Pacifico-Regular.ttf';
 import './fonts/Amatic_SC/AmaticSC-Bold.ttf';
+import './fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
