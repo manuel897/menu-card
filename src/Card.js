@@ -15,7 +15,6 @@ class Card extends React.Component {
         let retryCounter = 0;
         const loadData = retryCount => {
             if (retryCount < 4) {
-                console.log('loadData() retry' + retryCount);
                 fetch(BACKEND_URL + '/category')
                     // Retrieve its body as ReadableStream
                     .then(response => response.json())
@@ -27,7 +26,6 @@ class Card extends React.Component {
                             });
                         },
                         error => {
-                            console.log('trying again...');
                             setTimeout(() => {
                                 loadData(++retryCount);
                             }, 500);
@@ -48,7 +46,7 @@ class Card extends React.Component {
                 })}
             </div>
         ) : (
-            <div>Oops! Something went wrong</div>
+            <div>Loading...</div>
         );
 
         return (
