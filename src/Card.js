@@ -38,7 +38,6 @@ class Card extends React.Component {
     }
 
     render() {
-        console.log('render()');
         let page = this.state.isLoaded ? (
             <div>
                 {this.state.categories.map((category, index) => {
@@ -51,7 +50,7 @@ class Card extends React.Component {
 
         return (
             <div className="app-box">
-                <h1 className="main-title font-face-pacifico">
+                <h1 className="main-title">
                     <u>Lord's Bakers</u>
                 </h1>
                 {page}
@@ -64,9 +63,7 @@ class Category extends React.Component {
     render() {
         return (
             <div>
-                <h3 className="category-title font-face-pacifico">
-                    {this.props.category.name}
-                </h3>
+                <h3 className="category-title">{this.props.category.name}</h3>
                 <ol>
                     {this.props.category.items.map((item, index) => {
                         return (

@@ -25,11 +25,13 @@
 }
 
 .main-title {
+    font-family: 'Pacifico', cursive;
     color: #be7332;
     font-weight: 900;
 }
 
 .category-title {
+    font-family: 'Pacifico', cursive;
     color: #e67045;
     font-weight: 800;
 }

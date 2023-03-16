@@ -13,14 +13,7 @@ code {
         monospace;
 }
 
-@font-face {
-    font-family: 'Pacifico';
-    src: local('Pacifico'),
-        url('./fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
-    font-weight: regular;
-}
-
-@font-face {
+/* @font-face {
     font-family: 'Amatic_SC';
     src: local('Amatic_SC'),
         url('./fonts/Amatic_SC/AmaticSC-Bold.ttf') format('truetype');
@@ -33,4 +26,4 @@ code {
         url('./fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf')
             format('truetype');
     font-weight: 'regular';
-}
+} */
