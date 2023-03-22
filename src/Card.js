@@ -15,7 +15,7 @@ class Card extends React.Component {
         let retryCounter = 0;
         const loadData = retryCount => {
             if (retryCount < 4) {
-                fetch(BACKEND_URL + '/category')
+                fetch(BACKEND_URL + '/categories.json')
                     // Retrieve its body as ReadableStream
                     .then(response => response.json())
                     .then(
@@ -50,9 +50,14 @@ class Card extends React.Component {
 
         return (
             <div className="app-box">
-                <h1 className="main-title">
-                    <u>Lord's Bakers</u>
-                </h1>
+                <div className="title-box">
+                    <span className="main-title">
+                        <u className="main-title">Lord's Bakers</u>
+                    </span>
+                    <div className="secondary-title ">
+                        <span>M E N U</span>
+                    </div>
+                </div>
                 {page}
             </div>
         );

@@ -1,14 +1,11 @@
 /*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
-
-.font-face-pacifico {
-    font-family: 'Pacifico';
-}
-
+/* https://coolors.co/d2cbca-f9f8f7-252530-cb8d5e-e4c58c-c49d23 */
 .app {
     margin: 0;
     text-align: center;
-    background-color: #f7efd8;
-    font-family: 'Amatic_SC', cursive;
+    background-color: #252530;
+    color: #f9f8f7;
+    font-family: 'Amatic SC', cursive;
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
@@ -20,20 +17,39 @@
 }
 
 .app-box {
-    border: 20px solid #f6a466;
+    border: 20px solid #252530;
     padding: 1vh;
 }
 
+.title-box {
+    align-items: center;
+    flex-direction: column;
+}
+
+.secondary-title {
+    color: #d2cbca;
+    font-size: 50px;
+    font-family: 'Anton', sans-serif;
+}
+
 .main-title {
+    /* border: 2px solid white; */
     font-family: 'Pacifico', cursive;
-    color: #be7332;
+    color: #c49d23;
     font-weight: 900;
+    font-size: 40px;
+    text-decoration-color: #d2cbca;
+}
+
+u.main-title {
+    text-decoration-color: #d2cbca;
 }
 
 .category-title {
     font-family: 'Pacifico', cursive;
-    color: #e67045;
+    color: #cb8d5e;
     font-weight: 800;
+    font-size: 30px;
 }
 
 .item-box {
@@ -41,39 +57,5 @@
     justify-content: space-between;
     margin-right: 20px;
     border-bottom: 1px dashed;
+    font-size: 30px;
 }
-
-/* .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-} */
