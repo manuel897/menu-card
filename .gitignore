@@ -28,3 +28,9 @@ yarn-error.log*
 sample_menu_card.jpeg
 /samples
 *.zip
+.idea/.gitignore
+.idea/menu-card.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/libraries/menu_card.xml
