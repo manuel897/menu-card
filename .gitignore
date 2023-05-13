@@ -25,6 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # custom
+./src/Urls.js
 sample_menu_card.jpeg
 /samples
 *.zip
