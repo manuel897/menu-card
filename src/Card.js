@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BACKEND_URL } from './Shared';
+import { BACKEND_URL } from './Urls';
 
 class Card extends React.Component {
     constructor(props) {

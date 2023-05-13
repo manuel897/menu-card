@@ -3,7 +3,7 @@ import './../App.css';
 import './Login.css';
 import './../Shared.css';
 import LoginIcon from '@mui/icons-material/Login';
-import { BACKEND_URL } from '../Shared';
+import { BACKEND_URL } from '../Urls';
 
 class Login extends React.Component {
     constructor(props) {

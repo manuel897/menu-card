@@ -7,7 +7,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Login from '../Login/Login';
 import CategoryCreator from '../CategoryCreator/CategoryCreator';
-import { BACKEND_URL, SELF_URL } from '../Shared';
+import { BACKEND_URL, SELF_URL } from '../Urls';
 
 class Admin extends React.Component {
     constructor(props) {
