@@ -1,4 +1,4 @@
-# Dev Note
+# Dev Notes
 
 Create a js file `Urls.js` inside the src directory.
 
@@ -7,7 +7,12 @@ const BACKEND_URL = 'backend';
 const SELF_URL = 'self';
 ```
 
-# Getting Started with Create React App
+### Admin Page
+
+-   Navigate to /admin url
+-   Login using `admin` and `pass`
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
