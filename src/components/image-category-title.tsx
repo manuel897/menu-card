@@ -7,7 +7,7 @@ interface ImageCategoryTitleProps {
   imagePath: string;
 }
 
-const ImageCategoryTitle: React.FC<ImageCategoryTitleProps> = ({ title, imagePath }) => {
+const ImageCategoryTitle = ({ title, imagePath }: ImageCategoryTitleProps) => {
 return (
     <div className={`${pacifico.className} relative w-full h-90 overflow-hidden rounded-2xl shadow-lg group`}>
             <Image
