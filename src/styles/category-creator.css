@@ -1,0 +1,25 @@
+.category-add-box {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1vh;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f6a466;
+    padding-left: 5vw;
+    margin-right: 10vw;
+}
+
+.edit-item-box input {
+    width: 100%;
+}
+
+.edit-item-box span {
+    text-align: center;
+}
+
+.edit-item-box div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

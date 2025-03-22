@@ -1,3 +1,17 @@
+# Dev Notes
+
+Create a ts file `urls.ts` inside the src directory.
+
+```
+export const BACKEND_URL = 'backend';
+export const SELF_URL = 'self';
+```
+
+### Admin Page
+
+-   Navigate to /admin url
+-   Login using `admin` and `pass`
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

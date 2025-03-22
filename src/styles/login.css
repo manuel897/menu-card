@@ -1,0 +1,11 @@
+/*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
+
+.login-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.login-box input {
+    margin-bottom: 10px;
+}
