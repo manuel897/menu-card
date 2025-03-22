@@ -3,6 +3,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
+import Category from '@/components/category'; 
+import ImageCategoryTitle from '@/components/image-category-title';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { pacifico } from '@/app/ui/fonts';
 
 const Card = () => {
@@ -60,40 +63,18 @@ const Card = () => {
                 {!isLoaded && !error && <div>Loading...</div>}
 
                 {isLoaded && (
-                    <div>
-                        {categories.map(category => (
-                            <Category
-                                key={category.id || category.name}
-                                category={category}
-                            />
-                        ))}
-                    </div>
-                )}
+                    <div className="space-y-6">
+                    {categories.map(category => (
+                  <Category
+                    key={category.id || category.name}
+                    category={category}
+              />
+            ))}
+          </div>
+        )}
             </div>
         </div>
     );
 };
-
-const Category = ({ category }) => (
-    <div>
-        <h3 className='category-title'>
-            {category.name}
-        </h3>
-        <ol>
-            {category.items.map(item => (
-                <li key={item.id || item.name}>
-                    <Item item={item} />
-                </li>
-            ))}
-        </ol>
-    </div>
-);
-
-const Item = ({ item }) => (
-    <div className="item-box">
-        <span>{item.name}</span>
-        <span>{item.price}</span>
-    </div>
-);
 
 export default Card;
