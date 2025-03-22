@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
+import { pacifico } from '@/app/ui/fonts';
 
 const Card = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -75,7 +76,9 @@ const Card = () => {
 
 const Category = ({ category }) => (
     <div>
-        <h3 className="category-title">{category.name}</h3>
+        <h3 className='category-title'>
+            {category.name}
+        </h3>
         <ol>
             {category.items.map(item => (
                 <li key={item.id || item.name}>
