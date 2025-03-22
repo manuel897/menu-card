@@ -1,80 +1,82 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
-import Category from '@/components/category'; 
+import Category from '@/components/category';
 import ImageCategoryTitle from '@/components/image-category-title';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { pacifico } from '@/app/ui/fonts';
 
 const Card = () => {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [categories, setCategories] = useState([]);
-    const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [error, setError] = useState(null);
 
-    const loadData = useCallback((retryCount = 0) => {
-        if (retryCount >= 4) {
-            setError('Failed to fetch categories.');
-            return;
-        }
-        console.log('BACKEND URL :', BACKEND_URL);
+  const loadData = useCallback((retryCount = 0) => {
+    if (retryCount >= 4) {
+      setError('Failed to fetch categories.');
+      return;
+    }
+    console.log('BACKEND URL :', BACKEND_URL);
 
-        fetch(`${BACKEND_URL}/categories.json`)
-            .then(response => {
-                if (!response.ok)
-                    throw new Error('Network response was not ok');
-                return response.text();
-            })
-            .then(text => {
-                console.log('Raw response:', text); // check what you got
-                const json = JSON.parse(text); // manually parse (to catch JSON issues)
+    fetch(`${BACKEND_URL}/categories.json`)
+      .then((response) => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then((text) => {
+        console.log('Raw response:', text); // check what you got
+        const json = JSON.parse(text); // manually parse (to catch JSON issues)
 
-                setCategories(json);
-                setIsLoaded(true);
-                setError(null);
-            })
-            .catch(err => {
-                console.error(`Retry #${retryCount}: ${err}`);
-                setTimeout(() => {
-                    loadData(retryCount + 1);
-                }, Math.pow(2, retryCount) * 500);
-            });
-    }, []);
+        setCategories(json);
+        setIsLoaded(true);
+        setError(null);
+      })
+      .catch((err) => {
+        console.error(`Retry #${retryCount}: ${err}`);
+        setTimeout(
+          () => {
+            loadData(retryCount + 1);
+          },
+          Math.pow(2, retryCount) * 500
+        );
+      });
+  }, []);
 
-    useEffect(() => {
-        loadData();
-    }, [loadData]);
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
-    return (
-        <div className="app">
-            <div className="app-box">
-                <div className="title-box">
-                    <span className="main-title">
-                        <u>Lord's Bakers</u>
-                    </span>
-                    <div className="secondary-title">
-                        <span>M E N U</span>
-                    </div>
-                </div>
+  return (
+    <div className="app">
+      <div className="app-box">
+        <div className="title-box">
+          <span className="main-title">
+            <u>Lord's Bakers</u>
+          </span>
+          <div className="secondary-title">
+            <span>M E N U</span>
+          </div>
+        </div>
 
-                {error && <div className="error-message">{error}</div>}
+        {error && <div className="error-message">{error}</div>}
 
-                {!isLoaded && !error && <div>Loading...</div>}
+        {!isLoaded && !error && <div>Loading...</div>}
 
-                {isLoaded && (
-                    <div className="space-y-6">
-                    {categories.map(category => (
-                  <Category
-                    key={category.id || category.name}
-                    category={category}
+        {isLoaded && (
+          <div className="space-y-6">
+            {categories.map((category) => (
+              <Category
+                key={category.id || category.name}
+                category={category}
               />
             ))}
           </div>
         )}
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Card;

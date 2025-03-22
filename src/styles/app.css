@@ -1,60 +1,60 @@
 /*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
 /* https://coolors.co/d2cbca-f9f8f7-252530-cb8d5e-e4c58c-c49d23 */
 .app {
-    margin: 0;
-    text-align: center;
-    background-color: #252530;
-    color: #f9f8f7;
-    font-family: 'Amatic SC', cursive;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    font-size: larger;
+  margin: 0;
+  text-align: center;
+  background-color: #252530;
+  color: #f9f8f7;
+  font-family: 'Amatic SC', cursive;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  font-size: larger;
 }
 
 .app div {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .app-box {
-    border: 20px solid #252530;
-    /* padding: 1vh; */
+  border: 20px solid #252530;
+  /* padding: 1vh; */
 }
 
 .title-box {
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
 
 .secondary-title {
-    color: #d2cbca;
-    font-size: 50px;
-    font-family: 'Anton', sans-serif;
+  color: #d2cbca;
+  font-size: 50px;
+  font-family: 'Anton', sans-serif;
 }
 
 .main-title {
-    /* border: 2px solid white; */
-    font-family: 'Pacifico', cursive;
-    color: #c49d23;
-    font-weight: 900;
-    font-size: 40px;
-    text-decoration-color: #d2cbca;
+  /* border: 2px solid white; */
+  font-family: 'Pacifico', cursive;
+  color: #c49d23;
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration-color: #d2cbca;
 }
 
 u.main-title {
-    text-decoration-color: #d2cbca;
+  text-decoration-color: #d2cbca;
 }
 
 .category-title {
-    font-family: 'Pacifico', cursive;
-    color: #cb8d5e;
-    font-weight: 800;
-    font-size: 30px;
+  font-family: 'Pacifico', cursive;
+  color: #cb8d5e;
+  font-weight: 800;
+  font-size: 30px;
 }
 
 .item-box {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px dashed;
-    font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed;
+  font-size: 30px;
 }

@@ -27,7 +27,7 @@ const Category: React.FC<CategoryProps> = ({ category }) => (
         <li key={item.id || item.name}>
           <div className="item-box flex justify-between items-center shadow-sm">
             <span className="font-medium">{item.name}</span>
-            <span >{item.price}</span>
+            <span>{item.price}</span>
           </div>
         </li>
       ))}
