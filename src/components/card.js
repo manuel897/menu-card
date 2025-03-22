@@ -39,7 +39,7 @@ const Card = () => {
           () => {
             loadData(retryCount + 1);
           },
-          Math.pow(2, retryCount) * 500
+          Math.pow(2, retryCount) * 500,
         );
       });
   }, []);

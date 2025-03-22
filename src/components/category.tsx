@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageCategoryTitle from '@/components/image-category-title';
+import '@/styles/app.css';
 
 interface Item {
   id?: string | number;
@@ -15,7 +16,7 @@ interface CategoryProps {
   };
 }
 
-const Category: React.FC<CategoryProps> = ({ category }) => (
+const Category = ({ category }: CategoryProps) => (
   <div className="p-8">
     <ImageCategoryTitle
       title={category.name}
