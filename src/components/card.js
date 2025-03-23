@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
 import Category from '@/components/category';
+import TopBar from '@/components/top-bar';
 import ImageCategoryTitle from '@/components/image-category-title';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { pacifico } from '@/app/ui/fonts';
@@ -49,32 +50,35 @@ const Card = () => {
   }, [loadData]);
 
   return (
-    <section class="hero-container">
-      <div className="app bg-[url(/bg.png)] bg-fixed">
-        <div>
-          <div className="title-box">
-            <div className="secondary-title">
-              <span>M E N U</span>
+    <>
+      <TopBar />
+      <section class="hero-container">
+        <div className="app bg-[url(/bg.png)] bg-fixed">
+          <div>
+            <div className="title-box">
+              <div className="secondary-title">
+                <span>MENU</span>
+              </div>
             </div>
+
+            {error && <div className="error-message">{error}</div>}
+
+            {!isLoaded && !error && <div>Loading...</div>}
+
+            {isLoaded && (
+              <div className="space-y-4">
+                {categories.map((category) => (
+                  <Category
+                    key={category.id || category.name}
+                    category={category}
+                  />
+                ))}
+              </div>
+            )}
           </div>
-
-          {error && <div className="error-message">{error}</div>}
-
-          {!isLoaded && !error && <div>Loading...</div>}
-
-          {isLoaded && (
-            <div className="space-y-4">
-              {categories.map((category) => (
-                <Category
-                  key={category.id || category.name}
-                  category={category}
-                />
-              ))}
-            </div>
-          )}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -3,7 +3,8 @@
 
 .hero-container {
   width: 100%;
-  /*height: 100vh; /* Full screen height */
+  /*height: 100vh;
+   /* Full screen height */
 
   display: flex; /* For centering content */
   justify-content: center;
@@ -37,7 +38,9 @@
 }
 
 .secondary-title {
-  color: #d2cbca;
+  color: #0b1f24;
+
+  /* color: #d2cbca; */
   font-size: 50px;
   font-family: 'Anton', sans-serif;
 }
@@ -75,5 +78,5 @@ u.main-title {
 }
 
 .top-bar {
-  background-color: #90382f;
+  background-color: #bf6b63;
 }
