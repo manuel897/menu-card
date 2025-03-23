@@ -1,16 +1,34 @@
 /*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
 /* https://coolors.co/d2cbca-f9f8f7-252530-cb8d5e-e4c58c-c49d23 */
+
+.hero-container {
+  width: 100%;
+  /*height: 100vh; /* Full screen height */
+
+  display: flex; /* For centering content */
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+
+  /* background-color: #ece3d6; */
+  /* background-image: url('/bg.png'); */
+  /* background-size: cover;
+  background-position: center; */
+
+  position: relative;
+  /*  /overflow: hidden; /* Optional: for animations or hidden elements */
+}
+
 .app {
   text-align: center;
-  background-color: #252530;
-  color: #f9f8f7;
+  /* background-color: #252530; */
+  /* background-color: #ece3d6; */
+  color: #0b1f24;
   font-family: 'Amatic SC', cursive;
   display: flex;
   font-size: larger;
-}
-
-.app div {
   width: 100%;
+  justify-content: center;
 }
 
 .title-box {
@@ -27,7 +45,8 @@
 .main-title {
   /* border: 2px solid white; */
   font-family: 'Pacifico', cursive;
-  color: #c49d23;
+  color: #fffffc;
+  /* color: #c49d23; */
   font-weight: 900;
   font-size: 40px;
   text-decoration-color: #d2cbca;
@@ -53,4 +72,8 @@ u.main-title {
 
 .dev {
   background-color: blue;
+}
+
+.top-bar {
+  background-color: #90382f;
 }

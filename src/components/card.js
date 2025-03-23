@@ -49,33 +49,32 @@ const Card = () => {
   }, [loadData]);
 
   return (
-    <div className="app">
-      <div className="app-box">
-        <div className="title-box">
-          <span className="main-title">
-            <u>Lord's Bakers</u>
-          </span>
-          <div className="secondary-title">
-            <span>M E N U</span>
+    <section class="hero-container">
+      <div className="app bg-[url(/bg.png)] bg-fixed">
+        <div>
+          <div className="title-box">
+            <div className="secondary-title">
+              <span>M E N U</span>
+            </div>
           </div>
+
+          {error && <div className="error-message">{error}</div>}
+
+          {!isLoaded && !error && <div>Loading...</div>}
+
+          {isLoaded && (
+            <div className="space-y-4">
+              {categories.map((category) => (
+                <Category
+                  key={category.id || category.name}
+                  category={category}
+                />
+              ))}
+            </div>
+          )}
         </div>
-
-        {error && <div className="error-message">{error}</div>}
-
-        {!isLoaded && !error && <div>Loading...</div>}
-
-        {isLoaded && (
-          <div className="space-y-6">
-            {categories.map((category) => (
-              <Category
-                key={category.id || category.name}
-                category={category}
-              />
-            ))}
-          </div>
-        )}
       </div>
-    </div>
+    </section>
   );
 };
 

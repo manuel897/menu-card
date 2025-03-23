@@ -10,7 +10,7 @@ interface ImageCategoryTitleProps {
 const ImageCategoryTitle = ({ title, imagePath }: ImageCategoryTitleProps) => {
   return (
     <div
-      className={`${pacifico.className} relative w-full h-90 overflow-hidden rounded-2xl shadow-lg group`}
+      className={`${pacifico.className} relative w-full h-50 overflow-hidden rounded-t-2xl shadow-lg group`}
     >
       <Image
         src={imagePath}
@@ -19,7 +19,7 @@ const ImageCategoryTitle = ({ title, imagePath }: ImageCategoryTitleProps) => {
         className="object-cover group-hover:scale-105 transition-transform duration-300"
       />
 
-      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
         <h2 className="text-white text-2xl font-bold">{title}</h2>
       </div>
     </div>

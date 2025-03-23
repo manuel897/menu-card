@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageCategoryTitle from '@/components/image-category-title';
 import '@/styles/app.css';
+import '@/styles/category.css';
 
 interface Item {
   id?: string | number;
@@ -17,7 +18,7 @@ interface CategoryProps {
 }
 
 const Category = ({ category }: CategoryProps) => (
-  <div className="p-8">
+  <div className="pb-2 category rounded-2xl shadow-md inset-shadow-sm mb-7">
     <ImageCategoryTitle
       title={category.name}
       imagePath={`/${category.name}.png`}
@@ -26,7 +27,7 @@ const Category = ({ category }: CategoryProps) => (
     <ol>
       {category.items.map((item) => (
         <li key={item.id || item.name}>
-          <div className="item-box flex justify-between items-center shadow-sm">
+          <div className="item-box flex justify-between items-center shadow-sm ml-4 mr-4">
             <span className="font-medium">{item.name}</span>
             <span>{item.price}</span>
           </div>
