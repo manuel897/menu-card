@@ -50,35 +50,32 @@ const Card = () => {
   }, [loadData]);
 
   return (
-    <>
-      <TopBar />
-      <section class="app-container">
-        <div className="app">
-          <div>
-            <div className="title-box">
-              <div className="secondary-title">
-                <span>MENU</span>
-              </div>
+    <section class="app-container">
+      <div className="app">
+        <div>
+          <div className="title-box">
+            <div className="secondary-title">
+              <span>MENU</span>
             </div>
-
-            {error && <div className="error-message">{error}</div>}
-
-            {!isLoaded && !error && <div>Loading...</div>}
-
-            {isLoaded && (
-              <div className="space-y-4">
-                {categories.map((category) => (
-                  <Category
-                    key={category.id || category.name}
-                    category={category}
-                  />
-                ))}
-              </div>
-            )}
           </div>
+
+          {error && <div className="error-message">{error}</div>}
+
+          {!isLoaded && !error && <div>Loading...</div>}
+
+          {isLoaded && (
+            <div className="space-y-4">
+              {categories.map((category) => (
+                <Category
+                  key={category.id || category.name}
+                  category={category}
+                />
+              ))}
+            </div>
+          )}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
