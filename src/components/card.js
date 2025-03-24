@@ -4,10 +4,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
 import Category from '@/components/category';
-import TopBar from '@/components/top-bar';
-import ImageCategoryTitle from '@/components/image-category-title';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { pacifico } from '@/app/ui/fonts';
 
 const Card = () => {
   const [isLoaded, setIsLoaded] = useState(false);
