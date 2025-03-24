@@ -52,8 +52,8 @@ const Card = () => {
   return (
     <>
       <TopBar />
-      <section class="hero-container">
-        <div className="app bg-[url(/bg.png)] bg-fixed">
+      <section class="app-container">
+        <div className="app">
           <div>
             <div className="title-box">
               <div className="secondary-title">
