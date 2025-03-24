@@ -1,7 +1,6 @@
 import React from 'react';
 import ImageCategoryTitle from '@/components/image-category-title';
 import '@/styles/app.css';
-import '@/styles/category.css';
 
 interface Item {
   id?: string | number;

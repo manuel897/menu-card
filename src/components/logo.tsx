@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const Logo = () => (
-  <div className={`relative w-30 h-25`}>
+  <div className={`relative w-full h-50 `}>
     <Image
       src="/lords-logo.png"
       alt={'logo'}
