@@ -1,13 +1,14 @@
-# Dev Notes
+# Getting Started
 
-Create a ts file `urls.ts` inside the src directory.
+- Use `nvm use node` and then `npm i` to install the packages. Finally use `npm run dev`. 
+- Create a ts file `urls.ts` inside the src directory.
 
 ```
 export const BACKEND_URL = 'backend';
 export const SELF_URL = 'self';
 ```
 
-### Admin Page
+### Admin Page 
 
 - Navigate to /admin url
 - Login using `admin` and `pass`
