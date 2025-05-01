@@ -28,7 +28,7 @@ const About = () => (
         </div>
 
         {/* About Text */}
-        <div className={`${playfairDisplay.className} w-full lg:w-1/2`}>
+        <div className={`${pridi.className} w-full lg:w-1/2`}>
           <AboutSection />
         </div>
       </div>
