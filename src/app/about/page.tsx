@@ -1,6 +1,6 @@
 import ImageCard from '@/components/image-card';
 import '@/styles/app.css';
-import { playfairDisplay } from '../ui/fonts';
+import { pridi } from '../ui/fonts';
 import Image from 'next/image';
 
 const About = () => (
@@ -8,9 +8,9 @@ const About = () => (
     <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
       {/* Title */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl tracking-tight secondary-title">ABOUT</h2>
+        <h2 className={`${pridi.className} text-4xl tracking-tight secondary-title`}>ABOUT</h2>
         <div
-          style={{ backgroundColor: '#0b1f24' }}
+          style={{ backgroundColor: 'var(--color-stone)' }}
           className="w-16 h-1 mx-auto mt-2 rounded"
         ></div>
       </div>

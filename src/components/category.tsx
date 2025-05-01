@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageCategoryTitle from '@/components/image-category-title';
 import '@/styles/app.css';
+import { abrilFatface } from '@/app/ui/fonts';
 
 interface Item {
   id?: string | number;
@@ -26,8 +27,8 @@ const Category = ({ category }: CategoryProps) => (
     <ol>
       {category.items.map((item) => (
         <li key={item.id || item.name}>
-          <div className="item-box flex justify-between items-center shadow-sm ml-4 mr-4">
-            <span className="font-medium">{item.name}</span>
+          <div className={`${abrilFatface.className} item-box flex justify-between items-center shadow-sm ml-4 mr-4`}>
+            <span>{item.name.toUpperCase()}</span>
             <span>{item.price}</span>
           </div>
         </li>

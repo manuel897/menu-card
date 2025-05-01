@@ -1,3 +1,4 @@
+import { pridi } from '@/app/ui/fonts';
 import '@/styles/app.css';
 import Link from 'next/link';
 
@@ -13,7 +14,7 @@ const TopBar = () => (
           />
         </Link>{' '}
       </div>
-      <nav className="flex space-x-6">
+      <nav className={`${pridi.className} flex space-x-6`}>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
       </nav>

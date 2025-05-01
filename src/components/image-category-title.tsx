@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { pacifico } from '@/app/ui/fonts';
+import { alfaSlabOne } from '@/app/ui/fonts';
 
 interface ImageCategoryTitleProps {
   title: string;
@@ -10,7 +10,7 @@ interface ImageCategoryTitleProps {
 const ImageCategoryTitle = ({ title, imagePath }: ImageCategoryTitleProps) => {
   return (
     <div
-      className={`${pacifico.className} relative w-full h-50 overflow-hidden rounded-t-2xl shadow-lg group`}
+      className={`relative w-full h-50 overflow-hidden rounded-t-2xl group`}
     >
       <Image
         src={imagePath}
@@ -19,8 +19,8 @@ const ImageCategoryTitle = ({ title, imagePath }: ImageCategoryTitleProps) => {
         className="object-cover group-hover:scale-105 transition-transform duration-300"
       />
 
-      <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-        <h2 className="text-white text-2xl font-bold">{title}</h2>
+      <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
+        <span className={`${alfaSlabOne.className} category-title text-white text-2xl font-bold`}>{title}</span>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
 import Category from '@/components/category';
+import { pridi } from '@/app/ui/fonts';
 
 const Card = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -15,7 +16,6 @@ const Card = () => {
       setError('Failed to fetch categories.');
       return;
     }
-    console.log('BACKEND URL :', BACKEND_URL);
 
     fetch(`${BACKEND_URL}/categories.json`)
       .then((response) => {
@@ -50,7 +50,7 @@ const Card = () => {
       <div className="app">
         <div>
           <div className="title-box">
-            <div className="secondary-title">
+            <div className={`${pridi.className} secondary-title`}>
               <span>MENU</span>
             </div>
           </div>
