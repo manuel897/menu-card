@@ -1,9 +1,9 @@
 import '@/styles/app.css';
-import { abrilFatface, merriweather } from '../ui/fonts';
+import { abrilFatface, dmSerifText } from '../ui/fonts';
 import Image from 'next/image';
 
 const About = () => (
-  <section className={`${merriweather.className} w-full min-h-screen pt-10 pb-10 about-container`}>
+  <section className={`${dmSerifText.className} w-full min-h-screen pt-10 pb-10 about-container`}>
     <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
       {/* Title */}
       <div className="text-center mb-12">

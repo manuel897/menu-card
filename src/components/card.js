@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
 import Category from '@/components/category';
-import { abrilFatface, merriweather } from '@/app/ui/fonts';
+import { abrilFatface, dmSerifText } from '@/app/ui/fonts';
 
 const Card = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -57,7 +57,7 @@ const Card = () => {
 
           {error && <div className="error-message">{error}</div>}
 
-          {!isLoaded && !error && <div className={`${merriweather.className}`}> Loading...</div>}
+          {!isLoaded && !error && <div className={`${dmSerifText.className}`}> Loading...</div>}
 
           {isLoaded && (
             <div className="space-y-4">

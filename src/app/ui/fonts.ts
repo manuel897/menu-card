@@ -12,7 +12,7 @@ export const alfaSlabOne = Alfa_Slab_One({
   weight: '400',
 });
 
-export const merriweather = DM_Serif_Text({
+export const dmSerifText = DM_Serif_Text({
   // subsets: ['latin'],
   weight: '400',
 });
