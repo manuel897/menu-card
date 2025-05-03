@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/app.css';
 import { BACKEND_URL } from '@/urls';
 import Category from '@/components/category';
-import { pridi } from '@/app/ui/fonts';
+import { abrilFatface } from '@/app/ui/fonts';
 
 const Card = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -46,11 +46,11 @@ const Card = () => {
   }, [loadData]);
 
   return (
-    <section class="app-container">
+    <section className="app-container">
       <div className="app">
         <div>
           <div className="title-box">
-            <div className={`${pridi.className} secondary-title`}>
+            <div className={`${abrilFatface.className} secondary-title`}>
               <span>MENU</span>
             </div>
           </div>
