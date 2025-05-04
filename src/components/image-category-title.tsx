@@ -9,9 +9,7 @@ interface ImageCategoryTitleProps {
 
 const ImageCategoryTitle = ({ title, imagePath }: ImageCategoryTitleProps) => {
   return (
-    <div
-      className={`relative w-full h-50 overflow-hidden rounded-t-2xl group`}
-    >
+    <div className={`relative w-full h-50 overflow-hidden rounded-t-2xl group`}>
       <Image
         src={imagePath}
         alt={title}
@@ -20,7 +18,11 @@ const ImageCategoryTitle = ({ title, imagePath }: ImageCategoryTitleProps) => {
       />
 
       <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-        <span className={`${alfaSlabOne.className} category-title text-white text-2xl font-bold`}>{title}</span>
+        <span
+          className={`${alfaSlabOne.className} category-title text-white text-2xl font-bold`}
+        >
+          {title}
+        </span>
       </div>
     </div>
   );

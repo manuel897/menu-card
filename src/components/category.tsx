@@ -27,7 +27,9 @@ const Category = ({ category }: CategoryProps) => (
     <ol>
       {category.items.map((item) => (
         <li key={item.id || item.name}>
-          <div className={`${abrilFatface.className} item-box flex justify-between items-center shadow-sm ml-4 mr-4`}>
+          <div
+            className={`${abrilFatface.className} item-box flex justify-between items-center shadow-sm ml-4 mr-4`}
+          >
             <span>{item.name.toUpperCase()}</span>
             <span>{item.price}</span>
           </div>
