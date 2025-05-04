@@ -10,25 +10,11 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-
-    // Add Prettier config (disables conflicting ESLint rules)
-    ...compat.extends('prettier'),
-
-      // Add Prettier plugin as an ESLint rule
-  {
-    plugins: {
-      prettier: prettierPlugin,
-    },
-    rules: {
-      'prettier/prettier': ['error', {
-        semi: true,
-        singleQuote: true,
-        printWidth: 80,
-      }],
-    },
-  },
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    'plugin:prettier/recommended'
+  ),
 ];
-
 
 export default eslintConfig;
