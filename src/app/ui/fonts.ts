@@ -1,4 +1,9 @@
-import { Abril_Fatface, Alfa_Slab_One, DM_Serif_Text, Inter } from 'next/font/google';
+import {
+  Abril_Fatface,
+  Alfa_Slab_One,
+  DM_Serif_Text,
+  Inter,
+} from 'next/font/google';
 
 export const inter = Inter({ subsets: ['latin'] });
 
@@ -13,6 +18,6 @@ export const alfaSlabOne = Alfa_Slab_One({
 });
 
 export const dmSerifText = DM_Serif_Text({
-  // subsets: ['latin'],
+  subsets: ['latin'],
   weight: '400',
 });
