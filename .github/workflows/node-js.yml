@@ -20,6 +20,9 @@ jobs:
 
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: ls .
+      - run: ls ${{ github.workspace }}
+      - uses: actions/checkout@v4
       - name: Create a placeholder file urls.ts in the current directory
         run: |
           cat <<EOF > urls.ts
@@ -27,8 +30,6 @@ jobs:
           'backend/api/';
           export const SELF_URL = 'self';
           EOF
-      - run: ls ${{ github.workspace }}
-      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
