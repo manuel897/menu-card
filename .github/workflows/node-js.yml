@@ -22,7 +22,7 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Create a placeholder file urls.ts in the current directory
         run: |
-          cat <<EOF > file.ts
+          cat <<EOF > urls.ts
           export const BACKEND_URL =
           'backend/api/';
           export const SELF_URL = 'self';
