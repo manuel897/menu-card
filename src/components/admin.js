@@ -1,15 +1,15 @@
 'use client';
 
-import React from 'react';
-import '@/styles/app.css';
+import CategoryCreator from '@/components/category-creator';
+import Login from '@/components/login';
 import '@/styles/admin.css';
+import '@/styles/app.css';
 import '@/styles/shared.css';
+import { BACKEND_URL, SELF_URL } from '@/urls';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CloseIcon from '@mui/icons-material/Close';
 import DoneIcon from '@mui/icons-material/Done';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Login from '@/components/login';
-import CategoryCreator from '@/components/category-creator';
-import { BACKEND_URL, SELF_URL } from '@/urls';
+import React from 'react';
 
 class Admin extends React.Component {
   constructor(props) {
@@ -117,7 +117,7 @@ class Admin extends React.Component {
   render() {
     let deleteModeSection = this.state.categories.map((category, index) => {
       return (
-        <div className="app">
+        <div className="app" key={index}>
           <div>
             <CategoryEditor
               categoryIndex={index}

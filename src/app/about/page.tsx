@@ -55,10 +55,10 @@ const AboutSection = () => {
           consistency.
         </p>
         <p>
-          Whether you're looking for a cozy place to unwind after a walk in the
-          park, or a delicious selection of cakes, pastries, and baked delights
-          — Lords Bakery welcomes you with the warmth of home and the taste of
-          tradition.
+          Whether you&apos;re looking for a cozy place to unwind after a walk in
+          the park, or a delicious selection of cakes, pastries, and baked
+          delights — Lords Bakery welcomes you with the warmth of home and the
+          taste of tradition.
         </p>
       </div>
     </div>
@@ -74,8 +74,8 @@ const ContactSection = () => {
         Contact Us
       </h1>
       <p className="leading-tight">
-        We'd love to hear from you — whether it's for custom orders, feedback,
-        or just to say hello!
+        We&apos;d love to hear from you — whether it&apos;s for custom orders,
+        feedback, or just to say hello!
       </p>
 
       <div className="space-y-1">
