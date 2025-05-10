@@ -42,7 +42,7 @@ class Login extends React.Component {
   login() {
     if (this.areFieldsEmpty()) {
       window.alert(
-        'Some fields are empty.Please provide a username and password to continue'
+        'Some fields are empty.Please provide a username and password to continue',
       );
     } else {
       // TODO: add login bypass
@@ -69,7 +69,7 @@ class Login extends React.Component {
                 (error) => {
                   console.error(error);
                   window.alert('Something went wrong');
-                }
+                },
               );
               break;
 

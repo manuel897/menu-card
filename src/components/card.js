@@ -57,7 +57,9 @@ const Card = () => {
 
           {error && <div className="error-message">{error}</div>}
 
-          {!isLoaded && !error && <div className={`${dmSerifText.className}`}> Loading...</div>}
+          {!isLoaded && !error && (
+            <div className={`${dmSerifText.className}`}> Loading...</div>
+          )}
 
           {isLoaded && (
             <div className="space-y-4">
@@ -71,7 +73,7 @@ const Card = () => {
           )}
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 

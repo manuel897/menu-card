@@ -34,7 +34,7 @@ class Admin extends React.Component {
 
   deleteCategory(index) {
     const conformBox = window.confirm(
-      `Do you really want to delete the ${this.state.categories[0].name} category? All of its ${this.state.categories.length} items will be deleted as well`
+      `Do you really want to delete the ${this.state.categories[0].name} category? All of its ${this.state.categories.length} items will be deleted as well`,
     );
     if (conformBox) {
       let newCategories = this.state.categories.slice();
@@ -71,7 +71,7 @@ class Admin extends React.Component {
       (error) => {
         console.error(error);
         // window.alert('Something went wrong. Try again later');
-      }
+      },
     );
   }
 
@@ -80,7 +80,7 @@ class Admin extends React.Component {
       {
         jwt: jwt,
       },
-      () => this.getData()
+      () => this.getData(),
     );
   }
 
@@ -110,7 +110,7 @@ class Admin extends React.Component {
           });
           // TODO handle error
           console.error(`ERROR ${error}`);
-        }
+        },
       );
   }
 
