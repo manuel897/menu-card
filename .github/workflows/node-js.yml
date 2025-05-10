@@ -21,9 +21,9 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v4
-      - name: Create a placeholder urls.ts file in the current directory
+      - name: Create a placeholder urls.ts file in the src directory
         run: |
-          cat <<EOF > urls.ts
+          cat <<EOF > ${{ github.workspace }}/src/urls.ts
           export const BACKEND_URL =
           'backend/api/';
           export const SELF_URL = 'self';
