@@ -24,8 +24,7 @@ jobs:
       - name: Create a placeholder urls.ts file in the src directory
         run: |
           cat <<EOF > ${{ github.workspace }}/src/urls.ts
-          export const BACKEND_URL =
-          'backend/api/';
+          export const BACKEND_URL = 'backend/api/';
           export const SELF_URL = 'self';
           EOF
       - run: ls ${{ github.workspace }}
