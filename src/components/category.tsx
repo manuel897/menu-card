@@ -1,21 +1,7 @@
-import React from 'react';
+import { abrilFatface } from '@/app/ui/fonts';
 import ImageCategoryTitle from '@/components/image-category-title';
 import '@/styles/app.css';
-import { abrilFatface } from '@/app/ui/fonts';
-
-interface Item {
-  id?: string | number;
-  name: string;
-  price: string;
-}
-
-interface CategoryProps {
-  category: {
-    id?: string | number;
-    name: string;
-    items: Item[];
-  };
-}
+import { CategoryProps } from './types';
 
 const Category = ({ category }: CategoryProps) => (
   <div className="pb-2 category rounded-2xl shadow-md inset-shadow-sm mb-7">
