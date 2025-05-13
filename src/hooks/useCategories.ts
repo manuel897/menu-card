@@ -1,11 +1,11 @@
 import { CategoryType } from '@/components/types';
-import { BACKEND_URL } from '@/urls';
 import { useCallback, useEffect, useState } from 'react';
 
 export const useCategories = () => {
   const [categories, setCategories] = useState<CategoryType[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const loadData = useCallback((retryCount = 0) => {
     if (retryCount >= 4) {
