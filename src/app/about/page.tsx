@@ -4,30 +4,29 @@ import { abrilFatface, dmSerifText } from '../ui/fonts';
 
 const About = () => (
   <section
-    className={`${dmSerifText.className} w-full min-h-screen pt-10 pb-10 about-container`}
+    className={`${dmSerifText.className} w-full min-h-screen pt-10 pb-10 about-container bg-caramel bg-[url('/cupcake-bg.jpeg')] bg-blend-darken bg-cover bg-no-repeat bg-center bg-fixed`}
   >
-    <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
+    <div className="max-w-7xl mx-auto md:px-2 lg:px-24">
       {/* Title */}
       <div className="text-center mb-12">
         <h2
-          className={`${abrilFatface.className} text-4xl tracking-tight secondary-title`}
+          className={`${abrilFatface.className} text-4xl tracking-tight text-cream`}
         >
-          ABOUT
+          ABOUT US
         </h2>
       </div>
 
-      {/* Image + Text Section */}
-      <div className="flex flex-col lg:flex-row items-center gap-10">
-        {/* Image */}
-        <div className="relative w-full h-[300px] lg:w-full lg:h-[400px] overflow-hidden shadow-lg group">
-          <Image
-            src="/lords-photo.jpg"
-            alt="Lords Bakery"
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+      {/* Image */}
+      <div className="relative w-full h-[300px] lg:w-full lg:h-[400px] md:w-full overflow-hidden shadow-lg group">
+        <Image
+          src="/photo.jpg"
+          alt="Lords Bakery"
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
 
+      <div className="flex flex-col lg:flex-row items-center gap-10 p-4 rounded-2xl">
         <AboutSection />
 
         <ContactSection />
@@ -42,10 +41,11 @@ const AboutSection = () => {
       <div>
         <p>
           Nestled in a charming location right beside the city park,{' '}
-          <strong>Lords Bakers</strong> has been a beloved part of the community
-          for over a decade. Established nearly 26 years ago, our bakery has
-          become a favorite stop for families, park visitors, and anyone with a
-          love for fresh, handcrafted treats.
+          <strong>LORD&apos;S BAKERS</strong> has been a beloved part of the
+          community for over two decades. Established nearly{' '}
+          <strong> 26 years</strong> ago, our bakery has become a favorite stop
+          for families, park visitors, and anyone with a love for fresh,
+          handcrafted treats.
         </p>
         <p>
           What sets us apart? We believe in keeping everything close to home.
@@ -55,10 +55,10 @@ const AboutSection = () => {
           consistency.
         </p>
         <p>
-          Whether you're looking for a cozy place to unwind after a walk in the
-          park, or a delicious selection of cakes, pastries, and baked delights
-          — Lords Bakery welcomes you with the warmth of home and the taste of
-          tradition.
+          Whether you&apos;re looking for a cozy place to unwind after a walk in
+          the park, or a delicious selection of cakes, pastries, and baked
+          delights — Lords Bakery welcomes you with the warmth of home and the
+          taste of tradition.
         </p>
       </div>
     </div>
@@ -67,15 +67,13 @@ const AboutSection = () => {
 
 const ContactSection = () => {
   return (
-    <div className={`contact w-full p-6 space-y-4 rounded-2xl`}>
-      <h1
-        className={`${abrilFatface.className} text-3xl font-bold text-brown-800`}
-      >
-        Contact Us
+    <div className={`contact bg-caramel/70 w-full p-6 space-y-4 rounded-2xl`}>
+      <h1 className={`${abrilFatface.className} text-3xl font-bold `}>
+        CONTACT
       </h1>
       <p className="leading-tight">
-        We'd love to hear from you — whether it's for custom orders, feedback,
-        or just to say hello!
+        We&apos;d love to hear from you — whether it&apos;s for custom orders,
+        feedback, or just to say hello!
       </p>
 
       <div className="space-y-1">
