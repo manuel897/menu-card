@@ -1,18 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-midnight: #121063;
   --color-tahiti: #3ab7bf;
   --color-bermuda: #78dcca;
-  --color-dark-red: #73020C;
-  --color-red: #8C3604;
-  --color-muted-ochre: #E6C783;
+  --color-dark-red: #73020c;
+  --color-red: #8c3604;
+  --color-muted-ochre: #e6c783;
   --color-medium-brown: #9c5c2d;
   --color-muted-red: #9c4b3a;
   --color-cream: #fff2d5;
   --color-caramel: #c98c48;
   --color-beige: #f0d297;
-  --color-stone: #31280C;
+  --color-stone: #31280c;
 }
 
 .app-container {
@@ -86,29 +86,19 @@ u.main-title {
   background-color: var(--color-stone);
 }
 
-.about {
-  /* background-color: var(--color-caramel); */
-  /* color: var(--color-stone); */
-}
-
-.contact {
-  background-color: var(--color-caramel);
-  /* color: var(--color-stone); */
-}
-
 .contact h1 {
   font-size: 20px;
   font-weight: 800;
 }
 
-.about-container {
-  background-color: var(--color-cream);
-  color: var(--color-stone);
-}
 /* When resolution <= 1200px, hide full text and show short text */
 @media (max-width: 1200px) {
-    .category-title { font-size: 40px; }
-    .secondary-title { font-size: 30px; }
+  .category-title {
+    font-size: 40px;
+  }
+  .secondary-title {
+    font-size: 30px;
+  }
 }
 
 /*
@@ -118,4 +108,3 @@ u.main-title {
   cream: '#fff2d5',   // Ice cream
   orange: '#b5733d',  // Chocolate detail
   caramel: '#c98c48'  // Soft caramel */
-  
