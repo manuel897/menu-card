@@ -1,0 +1,31 @@
+/*  https://coolors.co/be7332-eec89a-f6a466-e67045-f7efd8 */
+
+.admin-page-box {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-left: 15vw solid #d2cbca;
+  padding: 1vh;
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #252530;
+  padding-left: 5vw;
+}
+
+.admin-title {
+  color: #d2cbca;
+  font-weight: 900;
+  font-family: 'Anton', sans-serif;
+}
+
+.category-editor-title {
+  /* color: #e67045; */
+  font-weight: 800;
+}
+
+.item-box {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+  border-bottom: 1px dashed;
+}
