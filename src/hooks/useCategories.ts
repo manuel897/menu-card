@@ -8,35 +8,38 @@ export const useCategories = () => {
   const [isLoading, setIsLoading] = useState(true);
   const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-  const loadData = useCallback((retryCount = 0) => {
-    if (retryCount >= 4) {
-      setError('Failed to fetch categories.');
-      setIsLoading(false);
-      return;
-    }
-
-    fetch(`${BACKEND_URL}/categories.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error('Network error');
-        return res.text();
-      })
-      .then((text) => {
-        const json = JSON.parse(text);
-        if (!Array.isArray(json)) {
-          throw new Error('Invalid data format');
-        }
-        json.forEach((element: CategoryType) => {
-          element.imagePath = convertToImagePath(element.name);
-        });
-        setCategories(json);
-        setError(null);
+  const loadData = useCallback(
+    (retryCount = 0) => {
+      if (retryCount >= 4) {
+        setError('Failed to fetch categories.');
         setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error(`Retry #${retryCount}: ${err}`);
-        setTimeout(() => loadData(retryCount + 1), 2 ** retryCount * 500);
-      });
-  }, []);
+        return;
+      }
+
+      fetch(`${BACKEND_URL}/categories.json`)
+        .then((res) => {
+          if (!res.ok) throw new Error('Network error');
+          return res.text();
+        })
+        .then((text) => {
+          const json = JSON.parse(text);
+          if (!Array.isArray(json)) {
+            throw new Error('Invalid data format');
+          }
+          json.forEach((element: CategoryType) => {
+            element.imagePath = convertToImagePath(element.name);
+          });
+          setCategories(json);
+          setError(null);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.error(`Retry #${retryCount}: ${err}`);
+          setTimeout(() => loadData(retryCount + 1), 2 ** retryCount * 500);
+        });
+    },
+    [BACKEND_URL],
+  );
 
   useEffect(() => {
     loadData();

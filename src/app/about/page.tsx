@@ -4,7 +4,7 @@ import { abrilFatface, dmSerifText } from '../ui/fonts';
 
 const About = () => (
   <section
-    className={`${dmSerifText.className} w-full min-h-screen pt-10 pb-10 about-container bg-caramel bg-[url('/cupcake-bg.jpeg')] bg-blend-darken bg-cover bg-no-repeat bg-center bg-fixed`}
+    className={`${dmSerifText.className} w-full min-h-screen pt-10 pb-10 bg-caramel bg-[url('/cupcake-bg.jpeg')] bg-blend-darken bg-cover bg-no-repeat bg-center bg-fixed`}
   >
     <div className="max-w-7xl mx-auto md:px-2 lg:px-24">
       {/* Title */}
