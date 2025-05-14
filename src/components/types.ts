@@ -1,6 +1,7 @@
 type CategoryType = {
   id: string;
   name: string;
+  imagePath: string;
   items: ItemType[];
   // Add other fields as needed
 };

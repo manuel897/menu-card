@@ -1,4 +1,5 @@
 import { CategoryType } from '@/components/types';
+
 import { useCallback, useEffect, useState } from 'react';
 
 export const useCategories = () => {
@@ -21,6 +22,12 @@ export const useCategories = () => {
       })
       .then((text) => {
         const json = JSON.parse(text);
+        if (!Array.isArray(json)) {
+          throw new Error('Invalid data format');
+        }
+        json.forEach((element: CategoryType) => {
+          element.imagePath = convertToImagePath(element.name);
+        });
         setCategories(json);
         setError(null);
         setIsLoading(false);
@@ -37,3 +44,11 @@ export const useCategories = () => {
 
   return { categories, error, isLoading };
 };
+
+function convertToImagePath(name: string) {
+  if (!name) return '';
+
+  // convert name to lower_kebab-case
+  const matches = name.match(/[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g);
+  return matches ? `/${matches.join('-').toLowerCase()}.png` : '';
+}
