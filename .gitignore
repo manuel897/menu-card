@@ -45,3 +45,4 @@ next-env.d.ts
 
 .prettierrc.yml
 .vscode
+src/app/favicon.ico
