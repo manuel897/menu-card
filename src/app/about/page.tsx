@@ -37,7 +37,7 @@ const About = () => (
 
 const AboutSection = () => {
   return (
-    <div className={`about text-justify leading-tight w-full`}>
+    <div className={`font-normal text-justify w-full`}>
       <div>
         <p>
           Nestled in a charming location right beside the city park,{' '}
@@ -78,15 +78,15 @@ const ContactSection = () => {
 
       <div className="space-y-1">
         <h2 className={`${abrilFatface.className} text-xl font-semibold`}>
-          🍞 Visit Our Bakery
+          Visit Our Bakery
         </h2>
         <p>Temple Bypass Road, Thodupuzha</p>
         <a
           // TODO: Add the actual Google Maps link
-          href=""
+          href={process.env.GOOGLE_MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-red-100 hover:underline font-medium"
+          className="text-red-300 hover:underline font-medium"
         >
           View on Google Maps
         </a>
@@ -94,25 +94,38 @@ const ContactSection = () => {
 
       <div className="">
         <h2 className={`${abrilFatface.className} text-xl font-semibold`}>
-          📞 Call Us
+          Call Us
         </h2>
-        {/* TODO: Add the actual phone number */}
-        <p>+91 ----------</p>
+        <p>+91 {process.env.MOBILE_1} </p>
+        <p>+91 {process.env.MOBILE_2} </p>
       </div>
 
       <div className="space-y-1">
         <h2 className={`${abrilFatface.className} text-xl font-semibold`}>
-          📸 Follow Us
+          Instagram
         </h2>
-        <a
-          // TODO: Add the actual Instagram link
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-red-100 hover:underline font-medium"
-        >
-          @lords_bakers on Instagram
-        </a>
+        <p>
+          <a
+            // TODO: Add the actual Instagram link
+            href={process.env.INSTAGRAM_URL_1}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-300 hover:underline font-medium"
+          >
+            {process.env.INSTAGRAM_TAG_1}
+          </a>
+        </p>
+        <p>
+          <a
+            // TODO: Add the actual Instagram link
+            href={process.env.INSTAGRAM_URL_2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-300 hover:underline font-medium"
+          >
+            {process.env.INSTAGRAM_TAG_2}
+          </a>
+        </p>
       </div>
     </div>
   );
