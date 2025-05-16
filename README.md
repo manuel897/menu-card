@@ -1,17 +1,20 @@
-# Getting Started
+# Dev Notes
 
 - Use `nvm use node` and then `npm i` to install the packages. Finally use `npm run dev`.
-- Create a ts file `urls.ts` inside the src directory.
+- Create a `.env.local` file at the root.
 
+```env
+NEXT_PUBLIC_BACKEND_URL=https://backend/url
+METADATA_TITLE_1=Java
+METADATA_TITLE_2=Cafe
+MOBILE_1=1234567890
+MOBILE_2=1234567890
+INSTAGRAM_TAG_1=tag_1
+INSTAGRAM_URL_1=https://www.instagram.com/url_1
+INSTAGRAM_TAG_2=tag_2
+INSTAGRAM_URL_2=https://www.instagram.com/url_1
+GOOGLE_MAPS_URL=https://maps.app.goo.gl/
 ```
-export const BACKEND_URL = 'backend';
-export const SELF_URL = 'self';
-```
-
-### Admin Page
-
-- Navigate to /admin url
-- Login using `admin` and `pass`
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
