@@ -46,3 +46,5 @@ next-env.d.ts
 .prettierrc.yml
 .vscode
 src/app/favicon.ico
+src/app/icon.jpg
+src/app/*.png
