@@ -37,7 +37,7 @@ const About = () => (
 
 const AboutSection = () => {
   return (
-    <div className={`font-normal text-justify w-full`}>
+    <div className={`font-normal text-cream text-justify w-full`}>
       <div>
         <p>
           Nestled in a charming location right beside the city park,{' '}
@@ -49,16 +49,16 @@ const AboutSection = () => {
         </p>
         <p>
           What sets us apart? We believe in keeping everything close to home.
-          All our products are made using ingredients sourced directly from{' '}
-          <strong>Mariya Food Products</strong>, our own food production brand.
-          This ensures that every bite you take is made with care, quality, and
-          consistency.
+          All our products are made using locally sourced ingredients and
+          produced in <strong>Mariya Food Products</strong>, our own food
+          production brand. This ensures that every bite you take is made with
+          care, quality, and consistency.
         </p>
         <p>
           Whether you&apos;re looking for a cozy place to unwind after a walk in
           the park, or a delicious selection of cakes, pastries, and baked
-          delights — Lords Bakery welcomes you with the warmth of home and the
-          taste of tradition.
+          delights — we welcome you with the warmth of home and the taste of
+          tradition.
         </p>
       </div>
     </div>
@@ -67,7 +67,9 @@ const AboutSection = () => {
 
 const ContactSection = () => {
   return (
-    <div className={`contact bg-caramel/70 w-full p-6 space-y-4 rounded-2xl`}>
+    <div
+      className={`contact text-cream bg-caramel/70 w-full p-6 space-y-4 rounded-2xl`}
+    >
       <h1 className={`${abrilFatface.className} text-3xl font-bold `}>
         CONTACT
       </h1>
