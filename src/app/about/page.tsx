@@ -50,7 +50,7 @@ const AboutSection = () => {
         <p>
           What sets us apart? We believe in keeping everything close to home.
           All our products are made using locally sourced ingredients and
-          produced in <strong>Mariya Food Products</strong>, our own food
+          produced by <strong>Mariya Food Products</strong>, our own food
           production brand. This ensures that every bite you take is made with
           care, quality, and consistency.
         </p>
