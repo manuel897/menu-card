@@ -48,3 +48,7 @@ next-env.d.ts
 src/app/favicon.ico
 src/app/icon.jpg
 src/app/*.png
+src/app/manifest.json
+
+items.json
+src/app/opengraph-image.jpg
