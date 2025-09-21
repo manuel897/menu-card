@@ -4,7 +4,7 @@ import { abrilFatface, dmSerifText } from '../ui/fonts';
 
 const About = () => (
   <section
-    className={`${dmSerifText.className} w-full min-h-screen pt-10 pb-10 about-container bg-caramel bg-[url('/cupcake-bg.jpeg')] bg-blend-darken bg-cover bg-no-repeat bg-center bg-fixed`}
+    className={`${dmSerifText.className} w-full min-h-screen pt-10 pb-10 bg-caramel bg-[url('/cupcake-bg.jpeg')] bg-blend-darken bg-cover bg-no-repeat bg-center bg-fixed`}
   >
     <div className="max-w-7xl mx-auto md:px-2 lg:px-24">
       {/* Title */}
@@ -37,7 +37,7 @@ const About = () => (
 
 const AboutSection = () => {
   return (
-    <div className={`about text-justify leading-tight w-full`}>
+    <div className={`font-normal text-cream text-justify w-full`}>
       <div>
         <p>
           Nestled in a charming location right beside the city park,{' '}
@@ -49,16 +49,16 @@ const AboutSection = () => {
         </p>
         <p>
           What sets us apart? We believe in keeping everything close to home.
-          All our products are made using ingredients sourced directly from{' '}
-          <strong>Mariya Food Products</strong>, our own food production brand.
-          This ensures that every bite you take is made with care, quality, and
-          consistency.
+          All our products are made using locally sourced ingredients and
+          produced by <strong>Mariya Food Products</strong>, our own food
+          production brand. This ensures that every bite you take is made with
+          care, quality, and consistency.
         </p>
         <p>
           Whether you&apos;re looking for a cozy place to unwind after a walk in
           the park, or a delicious selection of cakes, pastries, and baked
-          delights — Lords Bakery welcomes you with the warmth of home and the
-          taste of tradition.
+          delights — we welcome you with the warmth of home and the taste of
+          tradition.
         </p>
       </div>
     </div>
@@ -67,7 +67,9 @@ const AboutSection = () => {
 
 const ContactSection = () => {
   return (
-    <div className={`contact bg-caramel/70 w-full p-6 space-y-4 rounded-2xl`}>
+    <div
+      className={`contact text-cream bg-caramel/70 w-full p-6 space-y-4 rounded-2xl`}
+    >
       <h1 className={`${abrilFatface.className} text-3xl font-bold `}>
         CONTACT
       </h1>
@@ -78,15 +80,15 @@ const ContactSection = () => {
 
       <div className="space-y-1">
         <h2 className={`${abrilFatface.className} text-xl font-semibold`}>
-          🍞 Visit Our Bakery
+          Visit Our Bakery
         </h2>
         <p>Temple Bypass Road, Thodupuzha</p>
         <a
           // TODO: Add the actual Google Maps link
-          href=""
+          href={process.env.GOOGLE_MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-red-100 hover:underline font-medium"
+          className="text-red-300 hover:underline font-medium"
         >
           View on Google Maps
         </a>
@@ -94,25 +96,38 @@ const ContactSection = () => {
 
       <div className="">
         <h2 className={`${abrilFatface.className} text-xl font-semibold`}>
-          📞 Call Us
+          Call Us
         </h2>
-        {/* TODO: Add the actual phone number */}
-        <p>+91 ----------</p>
+        <p>+91 {process.env.MOBILE_1} </p>
+        <p>+91 {process.env.MOBILE_2} </p>
       </div>
 
       <div className="space-y-1">
         <h2 className={`${abrilFatface.className} text-xl font-semibold`}>
-          📸 Follow Us
+          Instagram
         </h2>
-        <a
-          // TODO: Add the actual Instagram link
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-red-100 hover:underline font-medium"
-        >
-          @lords_bakers on Instagram
-        </a>
+        <p>
+          <a
+            // TODO: Add the actual Instagram link
+            href={process.env.INSTAGRAM_URL_1}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-300 hover:underline font-medium"
+          >
+            {process.env.INSTAGRAM_TAG_1}
+          </a>
+        </p>
+        <p>
+          <a
+            // TODO: Add the actual Instagram link
+            href={process.env.INSTAGRAM_URL_2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-300 hover:underline font-medium"
+          >
+            {process.env.INSTAGRAM_TAG_2}
+          </a>
+        </p>
       </div>
     </div>
   );

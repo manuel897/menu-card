@@ -5,10 +5,7 @@ import { CategoryProps } from './types';
 
 const Category = ({ category }: CategoryProps) => (
   <div className="pb-2 category rounded-2xl shadow-md inset-shadow-sm mb-7">
-    <ImageCategoryTitle
-      title={category.name}
-      imagePath={`/${category.name}.png`}
-    />
+    <ImageCategoryTitle title={category.name} imagePath={category.imagePath} />
 
     <ol>
       {category.items.map((item) => (

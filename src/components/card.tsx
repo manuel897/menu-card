@@ -1,9 +1,9 @@
 'use client';
 
-import { abrilFatface, dmSerifText } from '@/app/ui/fonts';
-import Category from '@/components/category';
+import { abrilFatface, alfaSlabOne } from '@/app/ui/fonts';
 import { useCategories } from '@/hooks/useCategories';
 import '@/styles/app.css';
+import Category from './category';
 
 const Card = () => {
   const { categories, error, isLoading } = useCategories();
@@ -18,10 +18,20 @@ const Card = () => {
             </div>
           </div>
 
-          {error && <div className="error-message">{error}</div>}
+          {error && (
+            <div
+              className={`error-message flex flex-1 flex-col w-full justify-center min-h-screen pt-10 pb-10  ${alfaSlabOne.className} text-caramel text-4xl text-center`}
+            >
+              {error}{' '}
+            </div>
+          )}
 
           {isLoading && !error && (
-            <div className={`${dmSerifText.className}`}> Loading...</div>
+            <div
+              className={`flex flex-1 flex-col w-full justify-center min-h-screen pt-10 pb-10  ${alfaSlabOne.className} text-caramel text-4xl text-center`}
+            >
+              LOADING...
+            </div>
           )}
 
           {!isLoading && !error && (

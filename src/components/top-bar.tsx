@@ -9,7 +9,7 @@ const TopBar = () => (
       <div className="flex items-center space-x-1">
         <Link href="/">
           <Image
-            src="/lords-logo.png"
+            src="/logo.png"
             alt="Logo"
             className="h-20 w-auto cursor-pointer"
             width={100}
