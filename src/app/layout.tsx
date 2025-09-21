@@ -18,12 +18,16 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/public/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/public/apple-touch-icon.png"
+        <title>LORD\&apos;S BAKERS</title>
+        <meta property="og:title" content="LORD'S BAKERS" />
+        <meta
+          property="og:description"
+          content="Handcrafted cakes, pastries, and baked delights made with care and local ingredients."
         />
+        <meta property="og:image" content={process.env.OG_IMAGE_URL} />
+        <meta property="og:url" content={process.env.SELF_URL} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <body className={`antialiased`}>
         <TopBar />
