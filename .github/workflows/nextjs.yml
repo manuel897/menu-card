@@ -90,8 +90,7 @@ jobs:
           echo "IS_GITHUB_PAGE=true" >> .env.local
       - name: Copy images to 'out' folder
         run: |
-          mkdir -p public/images
-          cp -a src/sample-data/image/. out/
+          cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
       - name: List files after build
         run: ls -a ${{ github.workspace }}
       - name: Upload artifact
