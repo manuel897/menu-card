@@ -100,6 +100,11 @@ jobs:
           cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
       - name: List files in 'out' folder after build
         run: ls -a ${{ github.workspace }}/out
+      - name: Copy images to 'out' folder
+        run: |
+          cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
+      - name: List files after build
+        run: ls -a ${{ github.workspace }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
