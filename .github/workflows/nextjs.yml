@@ -90,7 +90,7 @@ jobs:
           echo "IS_GITHUB_PAGE=true" >> .env.local
             
           echo "cat .env.local"
-          cat .Renviron
+          cat .env.local
 
           echo "ls -a ."
           ls -a .
