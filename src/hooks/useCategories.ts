@@ -11,7 +11,7 @@ export const useCategories = () => {
   const loadData = useCallback(
     (retryCount = 0) => {
       if (retryCount >= 4) {
-        setError('Failed to fetch categories.');
+        setError('Opps, something went wrong. Please try again later.');
         setIsLoading(false);
         return;
       }

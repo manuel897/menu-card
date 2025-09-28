@@ -51,7 +51,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -75,6 +75,24 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Create and populate .env file
+        env:
+          NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
+        run: |
+          touch .env.local
+          echo "NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL" >> .env.local
+          echo "METADATA_TITLE_1=AWESOME" >> .env.local
+          echo "METADATA_TITLE_2=BAKERY" >> .env.local
+          echo "MOBILE_1=123456789" >> .env.local
+          echo "MOBILE_2=123456789" >> .env.local
+          echo "INSTAGRAM_TAG_1=@instagram_tag_1" >> .env.local
+          echo "INSTAGRAM_TAG_2=@instagram_tag_2" >> .env.local
+          echo "IS_GITHUB_PAGE=true" >> .env.local
+      - name: Copy images to 'out' folder
+        run: |
+          cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
+      - name: List files after build
+        run: ls -a ${{ github.workspace }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
