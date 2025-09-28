@@ -88,6 +88,12 @@ jobs:
           echo "INSTAGRAM_TAG_1=@instagram_tag_1" >> .env.local
           echo "INSTAGRAM_TAG_2=@instagram_tag_2" >> .env.local
           echo "IS_GITHUB_PAGE=true" >> .env.local
+            
+          echo "cat .env.local"
+          cat .Renviron
+
+          echo "ls -a ."
+          ls -a .
       - name: Copy images to 'out' folder
         run: |
           cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
