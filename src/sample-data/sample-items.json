@@ -1,0 +1,45 @@
+[
+  {
+    "items": [
+      { "name": "orange smoothie", "price": "80" },
+      { "name": "pineapple smoothie", "price": "80" },
+      { "name": "pineapple orange", "price": "80" },
+      { "name": "mango smoothie", "price": "80" }
+    ],
+    "name": "Smoothie"
+  },
+  {
+    "items": [
+      { "name": "butter scotch", "price": "80" },
+      { "name": "tender coconut", "price": "80" },
+      { "name": "sharjah", "price": "60" },
+      { "name": "sharjah chocolate", "price": "60" },
+      { "name": "nuts & dates", "price": "80" },
+      { "name": "nuts & badam", "price": "80" },
+      { "name": "avocado", "price": "80" },
+      { "name": "dry fruit", "price": "80" },
+      { "name": "strawberry", "price": "80" },
+      { "name": "chocolate", "price": "70" },
+      { "name": "oreo", "price": "70" },
+      { "name": "snickers", "price": "70" },
+      { "name": "diary milk", "price": "70" },
+      { "name": "spanish delight", "price": "70" },
+      { "name": "cold coffee", "price": "80" },
+      { "name": "Oman", "price": "80" },
+      { "name": "Saudi", "price": "80" },
+      { "name": "Nuts", "price": "90" },
+      { "name": "Pista", "price": "80" }
+    ],
+    "name": "Shakes"
+  },
+  {
+    "items": [
+      { "name": "Chikku", "price": "Seasonal" },
+      { "name": "Musk Melon", "price": "Seasonal" },
+      { "name": "Pappaya", "price": "Seasonal" },
+      { "name": "Mango", "price": "Seasonal" },
+      { "name": "Apple", "price": "Seasonal" }
+    ],
+    "name": "Fruit shakes"
+  }
+]
