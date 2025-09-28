@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,12 +21,13 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
   # Build job
   build:
+    environment: Github Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -88,6 +89,17 @@ jobs:
           echo "INSTAGRAM_TAG_1=@instagram_tag_1" >> .env.local
           echo "INSTAGRAM_TAG_2=@instagram_tag_2" >> .env.local
           echo "IS_GITHUB_PAGE=true" >> .env.local
+            
+          echo "cat .env.local"
+          cat .env.local
+
+          echo "ls -a ."
+          ls -a .
+      - name: Copy images to 'out' folder
+        run: |
+          cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
+      - name: List files in 'out' folder after build
+        run: ls -a ${{ github.workspace }}/out
       - name: Copy images to 'out' folder
         run: |
           cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
