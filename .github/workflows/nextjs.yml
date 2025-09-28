@@ -98,6 +98,7 @@ jobs:
       - name: Copy images to 'out' folder
         run: |
           cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
+          ls -a ${{ github.workspace }}/out
       - name: List files in 'out' folder after build
         run: ls -a ${{ github.workspace }}/out
       - name: Copy images to 'out' folder
@@ -113,7 +114,7 @@ jobs:
   # Deployment job
   deploy:
     environment:
-      name: github-pages
+      name: Github Pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
