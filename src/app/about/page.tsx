@@ -19,8 +19,12 @@ const About = () => (
       {/* Image */}
       <div className="relative w-full h-[300px] lg:w-full lg:h-[400px] md:w-full overflow-hidden shadow-lg group">
         <Image
-          src="/photo.jpg"
-          alt="Lords Bakery"
+          src={
+            process.env.NEXT_PUBLIC_IS_GITHUB_PAGE === 'true'
+              ? '/menu-card/about-us.jpg'
+              : '/about-us.jpg'
+          }
+          alt="About Us Image"
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />

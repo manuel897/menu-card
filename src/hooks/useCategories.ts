@@ -53,5 +53,9 @@ function convertToImagePath(name: string) {
 
   // convert name to lower_kebab-case
   const matches = name.match(/[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g);
-  return matches ? `/${matches.join('-').toLowerCase()}.jpeg` : '';
+  const lowerKebabCaseName = matches ? matches.join('-').toLowerCase() : '';
+
+  return process.env.NEXT_PUBLIC_IS_GITHUB_PAGE === 'true'
+    ? `menu-card/${lowerKebabCaseName}.jpeg`
+    : `/${lowerKebabCaseName}.jpeg`;
 }
