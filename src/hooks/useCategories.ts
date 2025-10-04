@@ -16,7 +16,12 @@ export const useCategories = () => {
         return;
       }
 
-      fetch(`${BACKEND_URL}/categories.json`)
+      const resource =
+        process.env.NEXT_PUBLIC_IS_GITHUB_PAGE === 'true'
+          ? 'dummy-categories'
+          : 'categories';
+
+      fetch(`${BACKEND_URL}/${resource}.json`)
         .then((res) => {
           if (!res.ok) throw new Error('Network error');
           return res.text();
@@ -55,7 +60,5 @@ function convertToImagePath(name: string) {
   const matches = name.match(/[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g);
   const lowerKebabCaseName = matches ? matches.join('-').toLowerCase() : '';
 
-  return process.env.NEXT_PUBLIC_IS_GITHUB_PAGE === 'true'
-    ? `menu-card/${lowerKebabCaseName}.jpeg`
-    : `/${lowerKebabCaseName}.jpeg`;
+  return `/${lowerKebabCaseName}.jpeg`;
 }
