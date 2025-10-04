@@ -21,8 +21,8 @@ const About = () => (
         <Image
           src={
             process.env.NEXT_PUBLIC_IS_GITHUB_PAGE === 'true'
-              ? '/menu-card/about-us.jpg'
-              : '/about-us.jpg'
+              ? '/menu-card/about-us.png'
+              : '/about-us.png'
           }
           alt="About Us Image"
           fill
