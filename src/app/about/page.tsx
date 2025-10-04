@@ -45,11 +45,13 @@ const AboutSection = () => {
       <div>
         <p>
           Nestled in a charming location right beside the city park,{' '}
-          <strong>LORD&apos;S BAKERS</strong> has been a beloved part of the
-          community for over two decades. Established nearly{' '}
-          <strong> 26 years</strong> ago, our bakery has become a favorite stop
-          for families, park visitors, and anyone with a love for fresh,
-          handcrafted treats.
+          <strong>
+            {process.env.TITLE_1} {process.env.TITLE_2}
+          </strong>{' '}
+          has been a beloved part of the community for over two decades.
+          Established nearly <strong> 26 years</strong> ago, our bakery has
+          become a favorite stop for families, park visitors, and anyone with a
+          love for fresh, handcrafted treats.
         </p>
         <p>
           What sets us apart? We believe in keeping everything close to home.

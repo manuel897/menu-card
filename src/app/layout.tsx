@@ -2,8 +2,8 @@ import TopBar from '@/components/top-bar';
 import type { Metadata } from 'next';
 import './globals.css';
 
-const a: string = process.env.METADATA_TITLE_1 ?? 'Java';
-const b: string = process.env.METADATA_TITLE_2 ?? 'Shop';
+const a: string = process.env.TITLE_1 ?? 'JAVA';
+const b: string = process.env.TITLE_2 ?? 'BAKERY';
 
 export const metadata: Metadata = {
   title: a + ' ' + b,

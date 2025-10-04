@@ -9,7 +9,11 @@ const TopBar = () => (
       <div className="flex items-center space-x-1">
         <Link href="/">
           <Image
-            src="/logo.png"
+            src={
+              process.env.NEXT_PUBLIC_IS_GITHUB_PAGE === 'true'
+                ? '/menu-card/logo.png'
+                : '/logo.png'
+            }
             alt="Logo"
             className="h-20 w-auto cursor-pointer"
             width={100}
