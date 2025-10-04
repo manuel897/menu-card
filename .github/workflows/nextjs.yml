@@ -62,6 +62,7 @@ jobs:
           #
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
+          basePath: '/menu-card'
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -74,8 +75,6 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Create and populate .env file
         env:
           NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
@@ -95,6 +94,8 @@ jobs:
 
           echo "ls -a ."
           ls -a .
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Copy images to 'out' folder
         run: |
           cp -a ${{ github.workspace }}/src/sample-data/images/. ${{ github.workspace }}/out/
