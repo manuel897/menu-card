@@ -81,8 +81,8 @@ jobs:
         run: |
           touch .env.local
           echo "NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL" >> .env.local
-          echo "METADATA_TITLE_1=AWESOME" >> .env.local
-          echo "METADATA_TITLE_2=BAKERY" >> .env.local
+          echo "TITLE_1=JAVA" >> .env.local
+          echo "TITLE_2=BAKERY" >> .env.local
           echo "MOBILE_1=123456789" >> .env.local
           echo "MOBILE_2=123456789" >> .env.local
           echo "INSTAGRAM_TAG_1=@instagram_tag_1" >> .env.local
