@@ -44,27 +44,28 @@ const AboutSection = () => {
     <div className={`font-normal text-cream text-justify w-full`}>
       <div>
         <p>
-          Nestled in a charming location right beside the city park,{' '}
+          At{' '}
           <strong>
             {process.env.TITLE_1} {process.env.TITLE_2}
           </strong>{' '}
-          has been a beloved part of the community for over two decades.
-          Established nearly <strong> 26 years</strong> ago, our bakery has
-          become a favorite stop for families, park visitors, and anyone with a
-          love for fresh, handcrafted treats.
+          , we blend the comforting aroma of freshly brewed coffee with the
+          warmth of oven-fresh pastries to create a cozy space where every visit
+          feels like home. Founded on a love for simple, honest ingredients and
+          handcrafted flavors, our bakery is dedicated to serving high-quality
+          breads, cakes, and desserts made fresh every day. From our signature
+          croissants and cinnamon rolls to our hearty loaves and specialty
+          coffees, everything we make is infused with care, passion, and a touch
+          of creativity.
         </p>
         <p>
-          What sets us apart? We believe in keeping everything close to home.
-          All our products are made using locally sourced ingredients and
-          produced by <strong>Mariya Food Products</strong>, our own food
-          production brand. This ensures that every bite you take is made with
-          care, quality, and consistency.
-        </p>
-        <p>
-          Whether you&apos;re looking for a cozy place to unwind after a walk in
-          the park, or a delicious selection of cakes, pastries, and baked
-          delights — we welcome you with the warmth of home and the taste of
-          tradition.
+          Our mission goes beyond baking — it’s about building community. We
+          believe that great food brings people together, whether you’re
+          starting your morning with a latte and muffin or unwinding in the
+          afternoon with friends over a slice of cake. Every detail, from our
+          earthy green and brown tones to the inviting scent of coffee beans and
+          butter, reflects our commitment to warmth, comfort, and connection. At
+          Java Bakery, you’re not just a customer — you’re part of our story,
+          one delicious bite at a time.
         </p>
       </div>
     </div>
@@ -88,9 +89,8 @@ const ContactSection = () => {
         <h2 className={`${abrilFatface.className} text-xl font-semibold`}>
           Visit Our Bakery
         </h2>
-        <p>Temple Bypass Road, Thodupuzha</p>
+        <p>Baker Street, Buntown</p>
         <a
-          // TODO: Add the actual Google Maps link
           href={process.env.GOOGLE_MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
