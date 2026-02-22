@@ -32,10 +32,6 @@ GOOGLE_MAPS_URL=https://maps.app.goo.gl/
 1. Set up a A [Firebase Realtime Database](https://firebase.google.com/docs/database) that returns the contents of the menu card. See `src/sample-data/sample-items.json` for an example.
 2. Provide images for each category in the menu card by copying them to the `public` folder. For instance, if a category called "hot beverages" exists, then its image should be available as `public/hot-beverages.jpeg`. The image should be named in **lower-kebab-case**.
 
-## Github Workflow
-
-The websire is deployed in
-
 # What can be improved?
 
 - Contents of the _about_ page are hardcoded.
