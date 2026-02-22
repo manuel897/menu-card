@@ -4,6 +4,11 @@ A simple static react website that pulls data from a firebase realtime database.
 
 # How to get started?
 
+1. View the [github pages deployment](https://manuel897.github.io/menu-card/) of the website.
+2. See `.github/workflows/deploy-to-github.yml` for details.
+
+# How to get started locally?
+
 - Create a `.env.local` file at the root.
 
 ```env
@@ -19,15 +24,19 @@ INSTAGRAM_URL_2=https://www.instagram.com/url_1
 GOOGLE_MAPS_URL=https://maps.app.goo.gl/
 ```
 
-- Use `nvm use node` and then `npm i` to install the packages. Finally use `npm run dev`.
+- Run `nvm use node` (if using nvm) and then `npm i` to install the packages. Finally run `npm run dev` to start the server.
 - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 # How to prepare the contents of the menu card?
 
 1. Set up a A [Firebase Realtime Database](https://firebase.google.com/docs/database) that returns the contents of the menu card. See `src/sample-data/sample-items.json` for an example.
-2. Provide images for each category in the menu card. They are stored in the `public` folder. For instance, if a category called "hot beverages" exists, then its image should be available as `public/hot-beverages.jpeg`.
+2. Provide images for each category in the menu card by copying them to the `public` folder. For instance, if a category called "hot beverages" exists, then its image should be available as `public/hot-beverages.jpeg`. The image should be named in **lower-kebab-case**.
+
+## Github Workflow
+
+The websire is deployed in
 
 # What can be improved?
 
 - Contents of the _about_ page are hardcoded.
-- Images of categories could be retrieved from firebase.
+- Images of categories could be retrieved from firebase instead of them being static.
